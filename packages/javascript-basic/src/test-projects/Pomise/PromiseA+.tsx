@@ -200,7 +200,7 @@ class MyPromise implements IPromise {
                             if (typeof onRejected !== "function") {
                                 reject(this.result);
                             } else {
-                                let x = onRejected(this.result);
+                                const x = onRejected(this.result);
                                 resolvePromise(promise2, x, resolve, reject);
                             }
                         } catch (error) {
@@ -231,7 +231,7 @@ class MyPromise implements IPromise {
                         if (typeof onRejected !== "function") {
                             reject(this.result);
                         } else {
-                            let x = onRejected(this.result);
+                            const x = onRejected(this.result);
                             resolvePromise(promise2, x, resolve, reject);
                         }
                     } catch (error) {
@@ -247,7 +247,7 @@ class MyPromise implements IPromise {
 
 // 测试代码
 console.log(1);
-let promise1 = new MyPromise((resolve, reject) => {
+const promise1 = new MyPromise((resolve) => {
     console.log("函数参数里的this :", this);
     console.log("函数参数里的resolve :", resolve);
     // 这里我们都能找到resolve，但是调用resolve的时候，resolve里的this指向哪里了

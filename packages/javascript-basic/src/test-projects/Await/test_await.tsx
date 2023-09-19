@@ -22,6 +22,8 @@ const handleSteps = async () => {
     try {
         const value1 = await firstStep();
         const value2 = await secondStep();
+        console.log(value1);
+        console.log(value2);
         // await value1;
         // await value2;
     } catch (error) {

@@ -26,15 +26,15 @@ interface Callback {
     (...args: any[]): void;
 }
 
-interface IPromise {
-    status: string;
-    result: any;
-    onFulfilledCallbacks: Callback[];
-    onRejectedCallbacks: Callback[];
-    resolve: Resolve;
-    reject: Reject;
-    then: any;
-}
+// interface IPromise {
+//     status: string;
+//     result: any;
+//     onFulfilledCallbacks: Callback[];
+//     onRejectedCallbacks: Callback[];
+//     resolve: Resolve;
+//     reject: Reject;
+//     then: any;
+// }
 function resolvePromise(promise2: MyPromise, x: any, resolve: Resolve, reject: Reject) {
     if (x === promise2) {
         throw new TypeError("Chaining cycle detected for promise");
@@ -49,6 +49,7 @@ function resolvePromise(promise2: MyPromise, x: any, resolve: Resolve, reject: R
             resolvePromise(promise2, y, resolve, reject);
         }, reject);
     } else if (x !== null && (typeof x === "object" || typeof x === "function")) {
+        console.log("hhh");
     } else {
         // 2.3.4 如果 x 不为对象或者函数，以 x 为参数执行 promise
         return resolve(x);
@@ -116,7 +117,6 @@ class MyPromise {
                         } catch (error) {
                             reject(error);
                         }
-
                     });
                 });
                 this.onRejectedCallbacks.push(() => {
@@ -140,7 +140,7 @@ class MyPromise {
 
 // 测试代码
 console.log(1);
-let promise1 = new MyPromise((resolve, reject) => {
+const promise1 = new MyPromise((resolve) => {
     console.log("函数参数里的this :", this);
     console.log("函数参数里的resolve :", resolve);
     // 这里我们都能找到resolve，但是调用resolve的时候，resolve里的this指向哪里了

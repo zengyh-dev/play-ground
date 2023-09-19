@@ -26,15 +26,15 @@ interface Callback {
     (...args: any[]): void;
 }
 
-interface IPromise {
-    status: string;
-    result: any;
-    onFulfilledCallbacks: Callback[];
-    onRejectedCallbacks: Callback[];
-    resolve: Resolve;
-    reject: Reject;
-    then: any;
-}
+// interface IPromise {
+//     status: string;
+//     result: any;
+//     onFulfilledCallbacks: Callback[];
+//     onRejectedCallbacks: Callback[];
+//     resolve: Resolve;
+//     reject: Reject;
+//     then: any;
+// }
 
 class MyPromise {
     static PENDING = "pending";
@@ -113,7 +113,7 @@ class MyPromise {
 
 // 测试代码
 console.log(1);
-let promise1 = new MyPromise((resolve, reject) => {
+const promise1 = new MyPromise((resolve) => {
     console.log("函数参数里的this :", this);
     console.log("函数参数里的resolve :", resolve);
     // 这里我们都能找到resolve，但是调用resolve的时候，resolve里的this指向哪里了
