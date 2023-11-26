@@ -1,4 +1,4 @@
-const debounce = (func: () => void, delay: number, immediate = false): Function => {
+const debounce = (func: () => void, delay: number, immediate = false): (() => void) => {
     let timer: number | null = null; // 借助闭包保存计时器
 
     const clearTimer = () => {

@@ -1,5 +1,6 @@
-export type CanvasContext = WebGLRenderingContext | CanvasRenderingContext2D;
-export type Draw = (ctx: RenderingContext, frameCount?: number) => void;
+export type WebGLRenderingContextExtend = WebGLRenderingContext & { program?: WebGLProgram };
+
+export type Draw = (ctx: WebGLRenderingContextExtend, frameCount?: number) => void;
 
 export interface CanvasProps {
     draw: Draw;

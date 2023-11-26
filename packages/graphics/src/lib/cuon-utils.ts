@@ -1,4 +1,7 @@
 // cuon-utils.js (c) 2012 kanda and matsuda
+
+import { WebGLRenderingContextExtend } from "../canvas/interface";
+
 /**
  * Create a program object and make current
  * @param gl GL context
@@ -6,8 +9,9 @@
  * @param fshader a fragment shader program (string)
  * @return true, if the program object was created and successfully made current
  */
-export function initShaders(gl: WebGLRenderingContext, vshader: string, fshader: string) {
+export function initShaders(gl: WebGLRenderingContextExtend, vshader: string, fshader: string) {
     const program = createProgram(gl, vshader, fshader);
+    console.log(program);
     if (!program) {
         console.log("Failed to create program");
         return false;
