@@ -1,12 +1,15 @@
+import React from "react";
+
 import Canvas from "../../canvas";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { initShaders } from "../../lib/cuon-utils";
+
 import FSHADER_SOURCE from "./fShader.frag";
 import { Point } from "./interface";
 import VSHADER_SOURCE from "./vShader.vert";
 
 function HelloPoint2() {
-    let clickCanvas: (e: React.MouseEvent<HTMLButtonElement>,) => void;
+    let clickCanvas: (e: React.MouseEvent<HTMLButtonElement>) => void;
     const draw = (ctx: WebGLRenderingContextExtend, canvas: HTMLCanvasElement) => {
         // 绘制上下文
         const gl = ctx;
@@ -27,7 +30,7 @@ function HelloPoint2() {
         }
 
         const a_PointSize = gl.getAttribLocation(gl.program as WebGLProgram, "a_PointSize");
-        const u_FragColor = gl.getUniformLocation(gl.program as WebGLProgram, 'u_FragColor');
+        const u_FragColor = gl.getUniformLocation(gl.program as WebGLProgram, "u_FragColor");
         console.log(u_FragColor);
 
         // 顶点位置传输给attribute变量，会自动补全缺失的齐次坐标最后一个变量
@@ -55,12 +58,12 @@ function HelloPoint2() {
             // react.left 和 react.top 是canvas的原点在浏览器窗口的坐标
             const react = target.getBoundingClientRect();
 
-            console.log('x: ', x, '  y: ', y);
-            console.log('react: ', react);
+            console.log("x: ", x, "  y: ", y);
+            console.log("react: ", react);
 
             const gl_point: Point = {
-                gl_point_x: ((x - react.left) - canvas.width / 2) / (canvas.width / 2),
-                gl_point_y: ((canvas.height / 2 - (y - react.top))) / (canvas.height / 2)
+                gl_point_x: (x - react.left - canvas.width / 2) / (canvas.width / 2),
+                gl_point_y: (canvas.height / 2 - (y - react.top)) / (canvas.height / 2),
             };
             g_ponits.push(gl_point);
 
@@ -81,6 +84,6 @@ function HelloPoint2() {
     };
 
     return <Canvas onClick={handleClickCanvas} draw={draw} width={500} height={500} options={{ context: "webgl" }} />;
-};
+}
 
 export default HelloPoint2;
