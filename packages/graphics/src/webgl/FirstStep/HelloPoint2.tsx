@@ -5,7 +5,7 @@ import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { initShaders } from "../../lib/cuon-utils";
 
 import FSHADER_SOURCE from "./fShader.frag";
-import { Point } from "./interface";
+import { Color, Point } from "./interface";
 import VSHADER_SOURCE from "./vShader.vert";
 
 function HelloPoint2() {
@@ -48,11 +48,11 @@ function HelloPoint2() {
 
         // 鼠标点击位置数组
         const g_ponits: Point[] = [];
-        // cosnt g_colors = [];
         clickCanvas = (e: React.MouseEvent<HTMLButtonElement>) => {
             const target = e.target as HTMLElement;
-            const x = e.clientX;
-            const y = e.clientY;
+            let x = e.clientX;
+            let y = e.clientY;
+            let color: Color = [1.0, 1.0, 1.0, 1.0];
 
             // 获取canvas的位置和尺寸信息
             // react.left 和 react.top 是canvas的原点在浏览器窗口的坐标
@@ -61,10 +61,23 @@ function HelloPoint2() {
             console.log("x: ", x, "  y: ", y);
             console.log("react: ", react);
 
+            x = (x - react.left - canvas.width / 2) / (canvas.width / 2);
+            y = (canvas.height / 2 - (y - react.top)) / (canvas.height / 2);
+
+            if (x >= 0.0 && y >= 0.0) {
+                // First quadrant
+                color = [1.0, 0.0, 0.0, 1.0]; // Red
+            } else if (x < 0.0 && y < 0.0) {
+                // Third quadrant
+                color = [0.0, 1.0, 0.0, 1.0]; // Green
+            }
+
             const gl_point: Point = {
-                gl_point_x: (x - react.left - canvas.width / 2) / (canvas.width / 2),
-                gl_point_y: (canvas.height / 2 - (y - react.top)) / (canvas.height / 2),
+                gl_point_x: x,
+                gl_point_y: y,
+                gl_point_color: color,
             };
+
             g_ponits.push(gl_point);
 
             // 需要clear，但是不用重新设置颜色
@@ -74,6 +87,7 @@ function HelloPoint2() {
             // 默认情况下，颜色缓冲区会被重置！！！
             g_ponits.forEach((point: Point) => {
                 gl.vertexAttrib3f(a_Position, point.gl_point_x, point.gl_point_y, 0.0);
+                gl.uniform4f(u_FragColor, ...point.gl_point_color);
                 gl.drawArrays(gl.POINTS, 0, 1);
             });
         };
