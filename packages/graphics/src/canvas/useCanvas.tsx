@@ -19,7 +19,7 @@ const useCanvas = (props: CanvasProps) => {
         // return () => {
         //     window.cancelAnimationFrame(animationFrameId);
         // };
-        draw(context);
+        draw(context, canvas);
     });
     return canvasRef;
 };
