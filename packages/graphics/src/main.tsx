@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HelloPoint2 from "./webgl/FirstStep/HelloPoint2";
+import HelloTriangle from "./webgl/Triangles/HelloTriangle";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <HelloPoint2 />
+        <HelloTriangle />
     </React.StrictMode>
 );
