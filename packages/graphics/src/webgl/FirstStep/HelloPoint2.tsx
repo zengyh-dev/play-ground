@@ -5,7 +5,7 @@ import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { initShaders } from "../../lib/cuon-utils";
 
 import FSHADER_SOURCE from "./fShader.frag";
-import { Color, Point } from "./interface";
+import { Color, Point } from "../interface";
 import VSHADER_SOURCE from "./vShader.vert";
 
 function HelloPoint2() {
