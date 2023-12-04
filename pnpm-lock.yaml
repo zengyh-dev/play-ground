@@ -43,6 +43,12 @@ importers:
 
   packages/graphics:
     dependencies:
+      cuon-matrix:
+        specifier: ^0.4.0
+        version: 0.4.0
+      cuon-matrix-ts:
+        specifier: ^1.1.0
+        version: 1.1.0
       glsl-transpiler:
         specifier: ^2.0.2
         version: 2.0.2
@@ -2092,6 +2098,14 @@ packages:
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
     dev: true
+
+  /cuon-matrix-ts@1.1.0:
+    resolution: {integrity: sha512-pShUTIrCJ/1enJGuHmqnzD0cGoF4CFxgYsY58VOdQP2UQblqmBiBw7LwMEjw3+P5224wPNh/qJQqDkzqAoe5KQ==}
+    dev: false
+
+  /cuon-matrix@0.4.0:
+    resolution: {integrity: sha512-PAtFdJgYpvI677mhonVGKMYhpOwLBAWBFdqxnpa35EzI4+B5pkv1JozjAEjCzjVP7NOwAP2eaM9U4rxKZv/D2g==}
+    dev: false
 
   /dargs@7.0.0:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cuon-matrix": "^0.4.0",
+    "cuon-matrix-ts": "^1.1.0",
     "glsl-transpiler": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
