@@ -1,6 +1,10 @@
 // 需要声明浮点数精度，否则报错No precision specified for (float)  
 #ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
 precision mediump float;
+#endif
 #endif
 
 uniform sampler2D u_Sampler0;
