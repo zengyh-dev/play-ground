@@ -14,7 +14,7 @@ class TRSTransform {
 
 export class WebGLRenderer {
     meshes: MeshRender[] = [];
-    lights: any[] = [];
+    lights = [];
     gl;
     camera;
 

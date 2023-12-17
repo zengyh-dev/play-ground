@@ -73,7 +73,7 @@ function GAMES202Main() {
 
         createGUI();
 
-        function mainLoop(now) {
+        function mainLoop() {
             cameraControls.update();
 
             renderer.render(guiParams);

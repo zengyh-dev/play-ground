@@ -2,7 +2,7 @@ import { WebGLRenderingContextExtend } from "../../canvas/interface";
 
 export class Texture {
     texture;
-    constructor(gl: WebGLRenderingContextExtend, img: any) {
+    constructor(gl: WebGLRenderingContextExtend, img) {
         this.texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, this.texture);
 

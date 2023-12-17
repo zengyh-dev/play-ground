@@ -17,7 +17,7 @@ export class Mesh {
         this.hasVertices = false;
         this.hasNormals = false;
         this.hasTexcoords = false;
-        let extraAttribs = [];
+        // const extraAttribs = [];
 
         if (verticesAttrib != null) {
             this.hasVertices = true;
