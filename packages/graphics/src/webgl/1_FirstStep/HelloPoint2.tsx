@@ -2,7 +2,7 @@ import React from "react";
 
 import Canvas from "../../canvas";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
-import { initShaders } from "../../lib/cuon-utils";
+import { initShaders } from "../../../lib/cuon-utils";
 
 import FSHADER_SOURCE from "./fShader.frag";
 import { Color, Point } from "../interface";

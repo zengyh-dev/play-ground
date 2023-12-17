@@ -1,6 +1,6 @@
 import Canvas from "../../../canvas";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
-import { initShaders } from "../../../lib/cuon-utils";
+import { initShaders } from "../../../../lib/cuon-utils";
 
 import FSHADER_SOURCE from "./matrix.frag";
 import VSHADER_SOURCE from "./matrix.vert";

@@ -20,6 +20,6 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["src", "glsl.d.ts"],
+    "include": ["src", "glsl.d.ts", "lib"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

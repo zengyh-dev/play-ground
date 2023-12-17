@@ -1,5 +1,5 @@
 import Canvas from "../../canvas";
-import { initShaders } from "../../lib/cuon-utils";
+import { initShaders } from "../../../lib/cuon-utils";
 import FSHADER_SOURCE from "./fShader.frag";
 import VSHADER_SOURCE from "./vShader.vert";
 
