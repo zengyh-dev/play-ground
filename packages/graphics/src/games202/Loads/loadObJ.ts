@@ -1,14 +1,15 @@
 import * as THREE from "three";
 import { MeshRender } from "../renderers/MeshRender";
-import { Material } from "../Materials/Materials";
+// import { Material } from "../Materials/Materials";
 import { MTLLoader, OBJLoader } from "obj-mtl-loader-three";
 import { Mesh } from "../Objects/Mesh";
 import { Texture } from "../Textures/Texture";
 
-import VertexShader from "../Shaders/PhongShader/vertex.glsl";
-import FragmentShader from "../Shaders/PhongShader/fragment.glsl";
+// import VertexShader from "../Shaders/PhongShader/vertex.vert";
+// import FragmentShader from "../Shaders/PhongShader/fragment.frag";
 import { WebGLRenderer } from "../renderers/WebGLRenderer";
 import texture from "../../../assets/mary/MC003_Kozakura_Mari.png";
+import { PhongMaterial } from "../Materials/PhongMaterial";
 
 console.log(texture);
 
@@ -56,31 +57,38 @@ export const loadOBJ = (renderer: WebGLRenderer, path: string, name: string) => 
                             if (mat.map != null) colorMap = new Texture(renderer.gl, mat.map.image);
                             // MARK: You can change the myMaterial object to your own Material instance
 
-                            let textureSample = 0;
-                            let myMaterial;
-                            if (colorMap != null) {
-                                textureSample = 1;
-                                myMaterial = new Material(
-                                    {
-                                        uSampler: { type: "texture", value: colorMap },
-                                        uTextureSample: { type: "1i", value: textureSample },
-                                        uKd: { type: "3fv", value: mat.color.toArray() },
-                                    },
-                                    [],
-                                    VertexShader,
-                                    FragmentShader
-                                );
-                            } else {
-                                myMaterial = new Material(
-                                    {
-                                        uTextureSample: { type: "1i", value: textureSample },
-                                        uKd: { type: "3fv", value: mat.color.toArray() },
-                                    },
-                                    [],
-                                    VertexShader,
-                                    FragmentShader
-                                );
-                            }
+                            // let textureSample = 0;
+                            // let myMaterial;
+                            // if (colorMap != null) {
+                            //     textureSample = 1;
+                            //     myMaterial = new Material(
+                            //         {
+                            //             uSampler: { type: "texture", value: colorMap },
+                            //             uTextureSample: { type: "1i", value: textureSample },
+                            //             uKd: { type: "3fv", value: mat.color.toArray() },
+                            //         },
+                            //         [],
+                            //         VertexShader,
+                            //         FragmentShader
+                            //     );
+                            // } else {
+                            //     myMaterial = new Material(
+                            //         {
+                            //             uTextureSample: { type: "1i", value: textureSample },
+                            //             uKd: { type: "3fv", value: mat.color.toArray() },
+                            //         },
+                            //         [],
+                            //         VertexShader,
+                            //         FragmentShader
+                            //     );
+                            // }
+
+                            const myMaterial = new PhongMaterial(
+                                mat.color.toArray(),
+                                colorMap,
+                                mat.specular.toArray(),
+                                renderer.lights[0].entity.mat.intensity
+                            );
 
                             const meshRender = new MeshRender(renderer.gl, mesh, myMaterial);
                             renderer.addMesh(meshRender);

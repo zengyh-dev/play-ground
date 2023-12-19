@@ -1,3 +1,8 @@
+export interface Attrib {
+    name: string;
+    array: Float32Array;
+}
+
 export class Mesh {
     public indices;
     public count;
@@ -11,7 +16,12 @@ export class Mesh {
     public texcoords;
     public texcoordsName;
 
-    constructor(verticesAttrib, normalsAttrib, texcoordsAttrib, indices) {
+    constructor(
+        verticesAttrib: Attrib,
+        normalsAttrib: Attrib | null,
+        texcoordsAttrib: Attrib | null,
+        indices: number[]
+    ) {
         this.indices = indices;
         this.count = indices.length;
         this.hasVertices = false;

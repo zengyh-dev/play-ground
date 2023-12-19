@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import * as dat from "dat.gui";
 import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
+
 import { PointLight } from "./Lights/PointLight";
 import { WebGLRenderer } from "./renderers/WebGLRenderer";
 import { loadOBJ } from "./Loads/loadObJ";
@@ -22,7 +23,7 @@ function GAMES202Main() {
             return;
         }
 
-        const camera = new THREE.PerspectiveCamera(75, gl.canvas.clientWidth / gl.canvas.clientHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
         const cameraControls = new OrbitControls(camera, canvas);
         cameraControls.enableZoom = true;
         cameraControls.enableRotate = true;

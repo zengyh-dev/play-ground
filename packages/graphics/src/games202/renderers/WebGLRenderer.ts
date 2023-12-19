@@ -18,8 +18,9 @@ export class WebGLRenderer {
     gl;
     camera;
 
-    constructor(gl: WebGLRenderingContextExtend, camera) {
+    constructor(gl: WebGLRenderingContextExtend, camera: THREE.Camera) {
         this.gl = gl;
+        console.log("camera", camera);
         this.camera = camera;
     }
 
@@ -66,13 +67,13 @@ export class WebGLRenderer {
 
                     this.gl.useProgram(mesh.shader.program.glShaderProgram);
                     // WebGLProgram#getUniforms getUniforms() instead.
-                    // const uLightPos = this.gl.getUniformLocation(
-                    //     mesh.shader.program.glShaderProgram as WebGLProgram,
-                    //     "uLightPos"
-                    // );
-                    // this.gl.uniform3fv(uLightPos, lightPos);
+                    const uLightPos = this.gl.getUniformLocation(
+                        mesh.shader.program.glShaderProgram as WebGLProgram,
+                        "uLightPos"
+                    );
+                    this.gl.uniform3fv(uLightPos, lightPos);
                     // console.log("hhh", mesh.shader.program);
-                    this.gl.uniform3fv(mesh.shader.program.uniforms.uLightPos, lightPos);
+                    // this.gl.uniform3fv(mesh.shader.program.uniforms.uLightPos, lightPos);
                     mesh.draw(this.camera, meshTrans);
                 }
             }

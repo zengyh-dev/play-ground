@@ -1,3 +1,4 @@
+import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { Shader } from "../Shaders/Shader";
 
 export class Material {
@@ -9,7 +10,12 @@ export class Material {
     attribs;
 
     // Uniforms is a map, attribs is a Array
-    constructor(uniforms, attribs, vsSrc: string, fsSrc: string) {
+    constructor(
+        uniforms: Map<string, { type: string; value: number[] | object }>,
+        attribs: string[],
+        vsSrc: string,
+        fsSrc: string
+    ) {
         this.uniforms = uniforms;
         this.attribs = attribs;
         this.#vsSrc = vsSrc;
@@ -22,13 +28,13 @@ export class Material {
         this.#flatten_attribs = attribs;
     }
 
-    setMeshAttribs(extraAttribs) {
+    setMeshAttribs(extraAttribs: string[]) {
         for (let i = 0; i < extraAttribs.length; i++) {
             this.#flatten_attribs.push(extraAttribs[i]);
         }
     }
 
-    compile(gl) {
+    compile(gl: WebGLRenderingContextExtend) {
         return new Shader(gl, this.#vsSrc, this.#fsSrc, {
             uniforms: this.#flatten_uniforms,
             attribs: this.#flatten_attribs,
