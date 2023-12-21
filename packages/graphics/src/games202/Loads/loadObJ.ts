@@ -19,15 +19,17 @@ export const loadOBJ = (renderer: WebGLRenderer, path: string, name: string) => 
         console.log(item, loaded, total);
     };
 
-    function onProgress(xhr) {
+    function onProgress(xhr: ProgressEvent) {
+        console.log("xhr", xhr);
         if (xhr.lengthComputable) {
             const percentComplete = (xhr.loaded / xhr.total) * 100;
-            console.log("model " + Math.round(percentComplete, 2) + "% downloaded");
+            console.log("model " + Math.round(percentComplete) + "% downloaded");
         }
     }
     function onError() {}
 
     new MTLLoader(manager).setPath(path).load(name + ".mtl", function (materials) {
+        console.log("materials", materials);
         materials.preload();
         new OBJLoader(manager)
             .setMaterials(materials)
@@ -35,7 +37,9 @@ export const loadOBJ = (renderer: WebGLRenderer, path: string, name: string) => 
             .load(
                 name + ".obj",
                 function (object) {
-                    object.traverse(function (child) {
+                    console.log("object", object);
+                    object.traverse((child) => {
+                        console.log("child", child);
                         if (child.isMesh) {
                             const geo = child.geometry;
                             let mat;

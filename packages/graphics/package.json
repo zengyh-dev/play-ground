@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@types/dat.gui": "^0.7.12",
-        "@types/three": "^0.91.0",
+        "@types/three": "^0.159.0",
         "cuon-matrix": "^0.4.0",
         "cuon-matrix-ts": "^1.1.0",
         "dat.gui": "^0.7.9",
@@ -20,7 +20,7 @@
         "obj-mtl-loader-three": "^1.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "three": "^0.138.3",
+        "three": "^0.159.0",
         "three-obj-mtl-loader": "^1.0.3"
     },
     "devDependencies": {

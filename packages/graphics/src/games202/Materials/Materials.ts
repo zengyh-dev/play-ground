@@ -1,5 +1,16 @@
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { Shader } from "../Shaders/Shader";
+import { Texture } from "../Textures/Texture";
+// import { Texture } from '../Textures/Texture';
+
+export interface Uniform {
+    type: string;
+    value: number[] | number | Texture | Iterable<number>;
+}
+
+export interface Uniforms {
+    [key: string]: Uniform;
+}
 
 export class Material {
     #flatten_uniforms;
@@ -10,12 +21,8 @@ export class Material {
     attribs;
 
     // Uniforms is a map, attribs is a Array
-    constructor(
-        uniforms: Map<string, { type: string; value: number[] | object }>,
-        attribs: string[],
-        vsSrc: string,
-        fsSrc: string
-    ) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string) {
         this.uniforms = uniforms;
         this.attribs = attribs;
         this.#vsSrc = vsSrc;

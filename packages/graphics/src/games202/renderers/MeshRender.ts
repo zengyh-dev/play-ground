@@ -1,7 +1,9 @@
-import { mat4 } from "gl-matrix";
+import { ReadonlyMat4, mat4 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
 import { Mesh } from "../Objects/Mesh";
 import { Material } from "../Materials/Materials";
+import { TRSTransform } from "./WebGLRenderer";
+import { Texture } from "../Textures/Texture";
 
 export class MeshRender {
     #vertexBuffer;
@@ -23,21 +25,22 @@ export class MeshRender {
         this.#indicesBuffer = gl.createBuffer();
 
         const extraAttribs = [];
-        if (mesh.hasVertices) {
+        if (mesh.vertices) {
             extraAttribs.push(mesh.verticesName);
             gl.bindBuffer(gl.ARRAY_BUFFER, this.#vertexBuffer);
+
             gl.bufferData(gl.ARRAY_BUFFER, mesh.vertices, gl.STATIC_DRAW);
             gl.bindBuffer(gl.ARRAY_BUFFER, null);
         }
 
-        if (mesh.hasNormals) {
+        if (mesh.normals) {
             extraAttribs.push(mesh.normalsName);
             gl.bindBuffer(gl.ARRAY_BUFFER, this.#normalBuffer);
             gl.bufferData(gl.ARRAY_BUFFER, mesh.normals, gl.STATIC_DRAW);
             gl.bindBuffer(gl.ARRAY_BUFFER, null);
         }
 
-        if (mesh.hasTexcoords) {
+        if (mesh.texcoords) {
             extraAttribs.push(mesh.texcoordsName);
             gl.bindBuffer(gl.ARRAY_BUFFER, this.#texcoordBuffer);
             gl.bufferData(gl.ARRAY_BUFFER, mesh.texcoords, gl.STATIC_DRAW);
@@ -48,23 +51,23 @@ export class MeshRender {
         gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(mesh.indices), gl.STATIC_DRAW);
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
 
-        this.material.setMeshAttribs(extraAttribs);
+        this.material.setMeshAttribs(extraAttribs as string[]);
         this.shader = this.material.compile(gl);
     }
 
-    draw(camera, transform) {
+    draw(camera: THREE.Camera, transform: TRSTransform) {
         const gl = this.gl;
 
         const modelViewMatrix = mat4.create();
         const projectionMatrix = mat4.create();
 
         camera.updateMatrixWorld();
-        mat4.invert(modelViewMatrix, camera.matrixWorld.elements);
+        mat4.invert(modelViewMatrix, camera.matrixWorld.elements as unknown as ReadonlyMat4);
         mat4.translate(modelViewMatrix, modelViewMatrix, transform.translate);
         mat4.scale(modelViewMatrix, modelViewMatrix, transform.scale);
-        mat4.copy(projectionMatrix, camera.projectionMatrix.elements);
+        mat4.copy(projectionMatrix, camera.projectionMatrix.elements as unknown as ReadonlyMat4);
 
-        if (this.mesh.hasVertices) {
+        if (this.mesh.verticesName) {
             const numComponents = 3;
             const type = gl.FLOAT;
             const normalize = false;
@@ -82,7 +85,7 @@ export class MeshRender {
             gl.enableVertexAttribArray(this.shader.program.attribs[this.mesh.verticesName]);
         }
 
-        if (this.mesh.hasNormals) {
+        if (this.mesh.normalsName) {
             const numComponents = 3;
             const type = gl.FLOAT;
             const normalize = false;
@@ -100,7 +103,7 @@ export class MeshRender {
             gl.enableVertexAttribArray(this.shader.program.attribs[this.mesh.normalsName]);
         }
 
-        if (this.mesh.hasTexcoords) {
+        if (this.mesh.texcoordsName) {
             const numComponents = 2;
             const type = gl.FLOAT;
             const normalize = false;
@@ -132,18 +135,24 @@ export class MeshRender {
             camera.position.z,
         ]);
 
+        console.log("uniforms", this.material.uniforms);
         for (const k in this.material.uniforms) {
             if (this.material.uniforms[k].type == "matrix4fv") {
-                gl.uniformMatrix4fv(this.shader.program.uniforms[k], false, this.material.uniforms[k].value);
+                gl.uniformMatrix4fv(
+                    this.shader.program.uniforms[k],
+                    false,
+                    this.material.uniforms[k].value as Iterable<number>
+                );
             } else if (this.material.uniforms[k].type == "3fv") {
-                gl.uniform3fv(this.shader.program.uniforms[k], this.material.uniforms[k].value);
+                gl.uniform3fv(this.shader.program.uniforms[k], this.material.uniforms[k].value as Iterable<number>);
             } else if (this.material.uniforms[k].type == "1f") {
-                gl.uniform1f(this.shader.program.uniforms[k], this.material.uniforms[k].value);
+                gl.uniform1f(this.shader.program.uniforms[k], this.material.uniforms[k].value as number);
             } else if (this.material.uniforms[k].type == "1i") {
-                gl.uniform1i(this.shader.program.uniforms[k], this.material.uniforms[k].value);
+                gl.uniform1i(this.shader.program.uniforms[k], this.material.uniforms[k].value as number);
             } else if (this.material.uniforms[k].type == "texture") {
+                const texture = this.material.uniforms[k].value as Texture;
                 gl.activeTexture(gl.TEXTURE0);
-                gl.bindTexture(gl.TEXTURE_2D, this.material.uniforms[k].value.texture);
+                gl.bindTexture(gl.TEXTURE_2D, texture.texture);
                 gl.uniform1i(this.shader.program.uniforms[k], 0);
             }
         }

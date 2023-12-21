@@ -6,15 +6,26 @@ interface ShaderLocations {
     attribs: string[];
 }
 
+interface CustomMap {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+}
+
+interface WebglProgram {
+    uniforms: CustomMap;
+    attribs: CustomMap;
+    glShaderProgram: WebGLProgram;
+}
+
 interface ShaderResult {
-    uniforms?: object;
-    attribs?: object;
+    uniforms?: CustomMap;
+    attribs?: CustomMap;
     glShaderProgram: WebGLProgram;
 }
 
 export class Shader {
     public gl: WebGLRenderingContextExtend;
-    public program!: WebGLProgram;
+    public program!: WebglProgram;
     constructor(gl: WebGLRenderingContextExtend, vsSrc: string, fsSrc: string, shaderLocations: ShaderLocations) {
         this.gl = gl;
         const vs = this.compileShader(vsSrc, gl.VERTEX_SHADER);
@@ -37,7 +48,6 @@ export class Shader {
             },
             shaderLocations
         );
-        console.log(this.program);
     }
 
     compileShader(shaderSource: string, shaderType: number) {
@@ -101,6 +111,6 @@ export class Shader {
             }
         }
 
-        return result;
+        return result as WebglProgram;
     }
 }

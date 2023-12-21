@@ -1,12 +1,23 @@
+import { ReadonlyVec3 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
-// import { EmissiveMaterial } from "../Lights/Light";
+import { EmissiveMaterial } from "../Lights/Light";
+import { Mesh } from "../Objects/Mesh";
 import { MeshRender } from "./MeshRender";
 
+interface Light {
+    mat: EmissiveMaterial;
+    mesh: Mesh;
+}
+interface RendererLight {
+    entity: Light;
+    meshRender: MeshRender;
+}
+
 // Remain rotatation
-class TRSTransform {
-    translate;
-    scale;
-    constructor(translate = [0, 0, 0], scale = [1, 1, 1]) {
+export class TRSTransform {
+    translate: ReadonlyVec3;
+    scale: ReadonlyVec3;
+    constructor(translate: ReadonlyVec3 = [0, 0, 0], scale: ReadonlyVec3 = [1, 1, 1]) {
         this.translate = translate;
         this.scale = scale;
     }
@@ -14,7 +25,7 @@ class TRSTransform {
 
 export class WebGLRenderer {
     meshes: MeshRender[] = [];
-    lights = [];
+    lights: RendererLight[] = [];
     gl;
     camera;
 
@@ -24,7 +35,8 @@ export class WebGLRenderer {
         this.camera = camera;
     }
 
-    addLight(light) {
+    addLight(light: { mat: EmissiveMaterial; mesh: Mesh }) {
+        console.log("lightsssss", light);
         this.lights.push({ entity: light, meshRender: new MeshRender(this.gl, light.mesh, light.mat) });
     }
 
@@ -51,7 +63,11 @@ export class WebGLRenderer {
 
         // Handle light
         const timer = Date.now() * 0.00025;
-        const lightPos = [Math.sin(timer * 6) * 100, Math.cos(timer * 4) * 150, Math.cos(timer * 2) * 100];
+        const lightPos: ReadonlyVec3 = [
+            Math.sin(timer * 6) * 100,
+            Math.cos(timer * 4) * 150,
+            Math.cos(timer * 2) * 100,
+        ];
 
         if (this.lights.length != 0) {
             for (let l = 0; l < this.lights.length; l++) {
@@ -61,8 +77,16 @@ export class WebGLRenderer {
                 for (let i = 0; i < this.meshes.length; i++) {
                     const mesh = this.meshes[i];
 
-                    const modelTranslation = [guiParams.modelTransX, guiParams.modelTransY, guiParams.modelTransZ];
-                    const modelScale = [guiParams.modelScaleX, guiParams.modelScaleY, guiParams.modelScaleZ];
+                    const modelTranslation: ReadonlyVec3 = [
+                        guiParams.modelTransX,
+                        guiParams.modelTransY,
+                        guiParams.modelTransZ,
+                    ];
+                    const modelScale: ReadonlyVec3 = [
+                        guiParams.modelScaleX,
+                        guiParams.modelScaleY,
+                        guiParams.modelScaleZ,
+                    ];
                     const meshTrans = new TRSTransform(modelTranslation, modelScale);
 
                     this.gl.useProgram(mesh.shader.program.glShaderProgram);
