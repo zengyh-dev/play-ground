@@ -1,5 +1,5 @@
 import { ReadonlyVec3 } from "gl-matrix";
-import { WebGLRenderingContextExtend } from "../../canvas/interface";
+import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { EmissiveMaterial } from "../Lights/Light";
 import { Mesh } from "../Objects/Mesh";
 import { MeshRender } from "./MeshRender";

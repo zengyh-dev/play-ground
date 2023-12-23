@@ -1,4 +1,4 @@
-import { WebGLRenderingContextExtend } from "../../canvas/interface";
+import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Shader } from "../Shaders/Shader";
 import { Texture } from "../Textures/Texture";
 // import { Texture } from '../Textures/Texture';
@@ -21,7 +21,6 @@ export class Material {
     attribs;
 
     // Uniforms is a map, attribs is a Array
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string) {
         this.uniforms = uniforms;
         this.attribs = attribs;

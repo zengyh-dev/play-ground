@@ -4,8 +4,8 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { PointLight } from "./Lights/PointLight";
 import { WebGLRenderer } from "./renderers/WebGLRenderer";
 import { loadOBJ } from "./Loads/loadObJ";
-import Canvas from "../canvas";
-import { WebGLRenderingContextExtend } from "../canvas/interface";
+import Canvas from "../../canvas";
+import { WebGLRenderingContextExtend } from "../../canvas/interface";
 
 const cameraPosition = [-20, 180, 250];
 

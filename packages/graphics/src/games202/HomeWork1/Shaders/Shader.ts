@@ -1,5 +1,5 @@
 // import { WebGLProgram } from "three";
-import { WebGLRenderingContextExtend } from "../../canvas/interface";
+import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 
 interface ShaderLocations {
     uniforms: string[];

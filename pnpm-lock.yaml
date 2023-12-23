@@ -47,8 +47,8 @@ importers:
         specifier: ^0.7.12
         version: 0.7.12
       '@types/three':
-        specifier: ^0.91.0
-        version: 0.91.0
+        specifier: ^0.159.0
+        version: 0.159.0
       cuon-matrix:
         specifier: ^0.4.0
         version: 0.4.0
@@ -66,7 +66,7 @@ importers:
         version: 2.0.2
       obj-mtl-loader-three:
         specifier: ^1.0.1
-        version: 1.0.1(three@0.138.3)
+        version: 1.0.1(three@0.159.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -74,11 +74,11 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       three:
-        specifier: ^0.138.3
-        version: 0.138.3
+        specifier: ^0.159.0
+        version: 0.159.0
       three-obj-mtl-loader:
         specifier: ^1.0.3
-        version: 1.0.3(three@0.138.3)
+        version: 1.0.3(three@0.159.0)
     devDependencies:
       '@types/react':
         specifier: ^18.2.37
@@ -1441,14 +1441,21 @@ packages:
     resolution: {integrity: sha512-7aqorHYgdNO4DM36stTiGO3DvKoex9TQRwsJU6vMaFGyqpBA1MNZkz+PG3gaNUPpTAOYhT1WR7M1JyA3fbS9Cw==}
     dev: true
 
-  /@types/three@0.91.0:
-    resolution: {integrity: sha512-rXASSCYHg1mGQFImDInAfj0GmQCvyXCto9LDtribL7d7jpu2t21om64Lvvzo6+MNWC0b2mKLU1/cggdefdwJCQ==}
-    dependencies:
-      '@types/webvr-api': 0.0.40
+  /@types/stats.js@0.17.3:
+    resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==}
     dev: false
 
-  /@types/webvr-api@0.0.40:
-    resolution: {integrity: sha512-kCGAvdfVmlNK7vHPGqDQcuESrzfyno8ECPuQDnjadgSntWShkBm0SW70i/qfgckgjFbKunGcTMKAZqknEwKs0Q==}
+  /@types/three@0.159.0:
+    resolution: {integrity: sha512-2gybdh7HtX+rGUgslzK7QEJfzD2I0qrbUGzKk+dK0FDx49UHkNX0rqZVRzIgeFjBd1HzzhNNgwNoMacm3Wyc7w==}
+    dependencies:
+      '@types/stats.js': 0.17.3
+      '@types/webxr': 0.5.10
+      fflate: 0.6.10
+      meshoptimizer: 0.18.1
+    dev: false
+
+  /@types/webxr@0.5.10:
+    resolution: {integrity: sha512-n3u5sqXQJhf1CS68mw3Wf16FQ4cRPNBBwdYLFzq3UddiADOim1Pn3Y6PBdDilz1vOJF3ybLxJ8ZEDlLIzrOQZg==}
     dev: false
 
   /@typescript-eslint/eslint-plugin@6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.53.0)(typescript@5.2.2):
@@ -2737,6 +2744,10 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /fflate@0.6.10:
+    resolution: {integrity: sha512-IQrh3lEPM93wVCEczc9SaAOvkmcoQn/G8Bo1e8ZPlY3X3bnAxWaBdvTdvM1hP62iZp0BXWDy4vTAy4fF0+Dlpg==}
+    dev: false
+
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -3546,6 +3557,10 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
+  /meshoptimizer@0.18.1:
+    resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==}
+    dev: false
+
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
     engines: {node: '>=8.6'}
@@ -3639,12 +3654,12 @@ packages:
       path-key: 4.0.0
     dev: true
 
-  /obj-mtl-loader-three@1.0.1(three@0.138.3):
+  /obj-mtl-loader-three@1.0.1(three@0.159.0):
     resolution: {integrity: sha512-n+utspYDlddYlXX0u8tGtDhKsiJr2WoBB/vnPYbauJDIwzDcBryQcKZP4omn9wgoVGB2t12Dcjfbi5WRFvloOQ==}
     peerDependencies:
       three: ^0.138.3
     dependencies:
-      three: 0.138.3
+      three: 0.159.0
     dev: false
 
   /object-assign@4.1.1:
@@ -4344,16 +4359,16 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three-obj-mtl-loader@1.0.3(three@0.138.3):
+  /three-obj-mtl-loader@1.0.3(three@0.159.0):
     resolution: {integrity: sha512-0z7BfyG6vYPY9RvxJvL4rq8PbNrF42Kn4zxeqTfeDzJN++2oKbtCQhxHs5vLULnDuCRTEyDFf5TYvO+1vnJ7KQ==}
     peerDependencies:
       three: '>= 0.91'
     dependencies:
-      three: 0.138.3
+      three: 0.159.0
     dev: false
 
-  /three@0.138.3:
-    resolution: {integrity: sha512-4t1cKC8gimNyJChJbaklg8W/qj3PpsLJUIFm5LIuAy/hVxxNm1ru2FGTSfbTSsuHmC/7ipsyuGKqrSAKLNtkzg==}
+  /three@0.159.0:
+    resolution: {integrity: sha512-eCmhlLGbBgucuo4VEA9IO3Qpc7dh8Bd4VKzr7WfW4+8hMcIfoAVi1ev0pJYN9PTTsCslbcKgBwr2wNZ1EvLInA==}
     dev: false
 
   /through2@0.6.5:
