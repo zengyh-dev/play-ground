@@ -17,7 +17,7 @@ export class Texture {
         const width = 1;
         const height = 1;
         const border = 0;
-        const srcFormat = gl.RGBA;
+        const srcFormat = gl.RGBA; //
         const srcType = gl.UNSIGNED_BYTE;
         const pixel = new Uint8Array([0, 0, 255, 255]); // opaque blue
         gl.texImage2D(gl.TEXTURE_2D, level, internalFormat, width, height, border, srcFormat, srcType, pixel);
@@ -32,7 +32,6 @@ export class Texture {
     }
 
     CreateConstantTexture(gl: WebGLRenderingContextExtend, buffer) {
-        console.log("hh buffer", buffer);
         this.texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, this.texture);
 

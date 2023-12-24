@@ -23,7 +23,7 @@ export class Material {
     frameBuffer;
 
     // Uniforms is a map, attribs is a Array
-    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string, frameBuffer?: string) {
+    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string, frameBuffer: FBO) {
         this.uniforms = uniforms;
         this.attribs = attribs;
         this.#vsSrc = vsSrc;

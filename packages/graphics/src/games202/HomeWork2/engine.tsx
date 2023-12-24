@@ -1,13 +1,15 @@
 import * as THREE from "three";
 import * as dat from "dat.gui";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
-// import { PointLight } from "./Lights/PointLight";
-import { WebGLRenderer } from "./renderers/WebGLRenderer";
-import { loadOBJ } from "./Loads/loadObJ";
+
 import Canvas from "../../canvas";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
+
+import { WebGLRenderer } from "./renderers/WebGLRenderer";
+import { loadOBJ } from "./Loads/loadObJ";
 import { setSize, setTransform } from "./utils/utils";
 import { DirectionalLight } from "./Lights/DirectionalLight";
+
 import { ReadonlyVec3 } from "gl-matrix";
 
 const cameraPosition = [30, 30, 30];

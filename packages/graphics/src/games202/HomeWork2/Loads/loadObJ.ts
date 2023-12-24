@@ -17,6 +17,7 @@ import phongVertex from "../Shaders/PhongShader/phongVertex.vert";
 
 import shadowFragment from "../Shaders/shadowShader/shadowFragment.frag";
 import shadowVertex from "../Shaders/shadowShader/shadowVertex.vert";
+import { ReadonlyVec3 } from "gl-matrix";
 
 console.log(texture);
 
@@ -73,8 +74,16 @@ export const loadOBJ = (
                             }
 
                             let material, shadowMaterial;
-                            const Translation = [transform.modelTransX, transform.modelTransY, transform.modelTransZ];
-                            const Scale = [transform.modelScaleX, transform.modelScaleY, transform.modelScaleZ];
+                            const Translation: ReadonlyVec3 = [
+                                transform.modelTransX,
+                                transform.modelTransY,
+                                transform.modelTransZ,
+                            ];
+                            const Scale: ReadonlyVec3 = [
+                                transform.modelScaleX,
+                                transform.modelScaleY,
+                                transform.modelScaleZ,
+                            ];
 
                             const light = renderer.lights[0].entity;
                             switch (objMaterial) {

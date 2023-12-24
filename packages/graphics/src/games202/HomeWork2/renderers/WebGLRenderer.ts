@@ -2,6 +2,7 @@ import { ReadonlyVec3 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { MeshRender } from "./MeshRender";
 import { DirectionalLight } from "../Lights/DirectionalLight";
+import { WebglProgram } from "../Shaders/Shader";
 
 interface RendererLight {
     entity: DirectionalLight;
@@ -51,6 +52,7 @@ export class WebGLRenderer {
         gl.clearDepth(1.0); // Clear everything
         gl.enable(gl.DEPTH_TEST); // Enable depth testing
         gl.depthFunc(gl.LEQUAL); // Near things obscure far things
+        gl.enable(gl.CULL_FACE); // 消隐功能，不再绘制背面，提高绘制速度（理想情况是两倍）
 
         console.assert(this.lights.length != 0, "No light");
         console.assert(this.lights.length == 1, "Multiple lights");
@@ -70,8 +72,9 @@ export class WebGLRenderer {
 
             // Camera pass
             for (let i = 0; i < this.meshes.length; i++) {
-                this.gl.useProgram(this.meshes[i].shader.program.glShaderProgram);
-                this.gl.uniform3fv(this.meshes[i].shader.program.uniforms.uLightPos, this.lights[l].entity.lightPos);
+                const shaderProgram = this.meshes[i].shader.program as WebglProgram;
+                this.gl.useProgram(shaderProgram.glShaderProgram);
+                this.gl.uniform3fv(shaderProgram.uniforms.uLightPos, this.lights[l].entity.lightPos);
                 this.meshes[i].draw(this.camera);
             }
         }

@@ -1,7 +1,7 @@
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Mesh } from "../Objects/Mesh";
 import { FBO } from "../Textures/FBO";
-import { setTransform } from "../engine";
+import { setTransform } from "../utils/utils";
 import { EmissiveMaterial } from "./Light";
 
 export class PointLight {

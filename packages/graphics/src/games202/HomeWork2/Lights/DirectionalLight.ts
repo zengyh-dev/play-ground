@@ -18,8 +18,8 @@ export class DirectionalLight {
         lightIntensity: number,
         lightColor: number[],
         lightPos: ReadonlyVec3,
-        focalPoint: number[],
-        lightUp: number[],
+        focalPoint: ReadonlyVec3,
+        lightUp: ReadonlyVec3,
         hasShadowMap: boolean,
         gl: WebGLRenderingContextExtend
     ) {
@@ -37,7 +37,7 @@ export class DirectionalLight {
         }
     }
 
-    CalcLightMVP(translate: number[], scale: number[]) {
+    CalcLightMVP(translate: ReadonlyVec3, scale: ReadonlyVec3) {
         console.log(translate);
         console.log(scale);
         const lightMVP = mat4.create();
@@ -46,11 +46,25 @@ export class DirectionalLight {
         const projectionMatrix = mat4.create();
 
         // Model transform
+        mat4.translate(modelMatrix, modelMatrix, translate);
+        mat4.scale(modelMatrix, modelMatrix, scale);
 
         // View transform
+        mat4.lookAt(viewMatrix, this.lightPos, this.focalPoint, this.lightUp);
 
         // Projection transform
+        const left = -100.0;
+        const right = 100.0;
 
+        const bottom = -100.0;
+        const top = 100.0;
+
+        const near = 0.01;
+        const far = 500.0;
+        // 正交投影
+        mat4.ortho(projectionMatrix, left, right, bottom, top, near, far);
+
+        // MVP矩阵
         mat4.multiply(lightMVP, projectionMatrix, viewMatrix);
         mat4.multiply(lightMVP, lightMVP, modelMatrix);
 
