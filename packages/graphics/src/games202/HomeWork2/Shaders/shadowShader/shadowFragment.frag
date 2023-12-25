@@ -8,8 +8,7 @@ uniform vec3 uCameraPos;
 varying highp vec3 vNormal;
 varying highp vec2 vTextureCoord;
 
-// 因为有其他贴图，用的都是rgba4个通道
-// 这里为了偷懒，把正常存在R通道的值给分在了4个通道
+// 
 vec4 pack(float depth) {
     // 使用rgba 4字节共32位来存储z值,1个字节精度为1/256
     const vec4 bitShift = vec4(1.0, 256.0, 256.0 * 256.0, 256.0 * 256.0 * 256.0);
