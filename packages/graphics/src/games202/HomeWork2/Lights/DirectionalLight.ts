@@ -38,28 +38,27 @@ export class DirectionalLight {
     }
 
     CalcLightMVP(translate: ReadonlyVec3, scale: ReadonlyVec3) {
-        console.log(translate);
-        console.log(scale);
         const lightMVP = mat4.create();
         const modelMatrix = mat4.create();
         const viewMatrix = mat4.create();
         const projectionMatrix = mat4.create();
 
-        // Model transform
+        // 1. Model transform（模型变换）
+        // mat4.translate(输出矩阵，输入矩阵，变换矩阵)
         mat4.translate(modelMatrix, modelMatrix, translate);
         mat4.scale(modelMatrix, modelMatrix, scale);
 
-        // View transform
+        // 2. View transform（视图变换）
         mat4.lookAt(viewMatrix, this.lightPos, this.focalPoint, this.lightUp);
 
-        // Projection transform
+        // 3. Projection transform（投影变换）
+        // 这些参数决定阴影的分辨率
         const left = -100.0;
         const right = 100.0;
-
         const bottom = -100.0;
         const top = 100.0;
-
-        const near = 0.01;
+        // near和far代表的是距离
+        const near = 1e-2;
         const far = 500.0;
         // 正交投影
         mat4.ortho(projectionMatrix, left, right, bottom, top, near, far);

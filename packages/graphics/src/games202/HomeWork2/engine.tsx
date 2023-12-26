@@ -49,14 +49,14 @@ function GAMES202Main() {
         // Add lights
         // light - is open shadow map == true
         const lightPos: ReadonlyVec3 = [0, 80, 80];
-        const focalPoint = [0, 0, 0];
-        const lightUp = [0, 1, 0];
+        const focalPoint: ReadonlyVec3 = [0, 0, 0];
+        const lightUp: ReadonlyVec3 = [0, 1, 0];
         const directionLight = new DirectionalLight(5000, [1, 1, 1], lightPos, focalPoint, lightUp, true, renderer.gl);
         renderer.addLight(directionLight);
 
         // Add shapes
 
-        const floorTransform = setTransform(0, 0, -30, 4, 4, 4);
+        const floorTransform = setTransform(0, 0, -30, 10, 10, 10);
         const obj1Transform = setTransform(0, 0, 0, 20, 20, 20);
         const obj2Transform = setTransform(40, 0, -40, 10, 10, 10);
 

@@ -27,7 +27,7 @@ varying highp vec3 vNormal;
 
 #define NEAR_PLANE 0.05
 #define LIGHT_WORLD_SIZE 1.0
-#define LIGHT_FRUSTUM_WIDTH 1.0
+#define LIGHT_FRUSTUM_WIDTH 2.0
 #define LIGHT_SIZE_UV (LIGHT_WORLD_SIZE / LIGHT_FRUSTUM_WIDTH)
 
 uniform sampler2D uShadowMap;
@@ -88,27 +88,31 @@ void uniformDiskSamples(const in vec2 randomSeed) {
     }
 }
 
-float useShadowMap(sampler2D shadowMap, vec4 shadowCoord) {
-    vec4 rgbaDepth = texture2D(shadowMap, shadowCoord.xy);
-    float depth = unpack(rgbaDepth);
-    float visibility = (shadowCoord.z > depth) ? 0.3 : 1.0;
-    return visibility;
-}
-
-float Bias() {
+float Bias(float ctrl) {
  //解决shadow bias 因为shadow map的精度有限，当要渲染的fragment在light space中距Light很远的时候，就会有多个附近的fragement会samper shadow map中同一个texel,但是即使这些fragment在camera view space中的深度值z随xy变化是值变化是很大的，
   //但他们在light space 中的z值(shadow map中的值)却没变或变化很小，这是因为shadow map分辨率低，采样率低导致精度低，不能准确的记录这些细微的变化
 
   // calculate bias (based on depth map resolution and slope)  vec3 lightDir = normalize(uLightPos);
     vec3 lightDir = normalize(uLightPos - vFragPos);
     vec3 normal = normalize(vNormal);
-    // float m = 200. / 2048. / 2;
-    float bias = max(0.05, 0.05 * (1.0 - dot(normal, lightDir))) * 0.01;
+    float m = 200. / float(SHADOWMAP_SIZE) / 2.; // 正交矩阵宽高/shadowmap分辨率
+    float bias = max(m, m * (1.0 - dot(normal, lightDir))) * ctrl;
     return bias;
 }
 
+float useShadowMap(sampler2D shadowMap, vec4 shadowCoord) {
+    float bias = Bias(1.4);
+    float curDepth = shadowCoord.z;
+
+    vec4 rgbaDepth = texture2D(shadowMap, shadowCoord.xy);
+    float shadowMapClosestDepth = unpack(rgbaDepth);
+
+    float visibility = (curDepth > shadowMapClosestDepth) ? 0.3 : 1.0;
+    return visibility;
+}
+
 float PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) {
-    float bias = Bias();
+    float bias = Bias(0.01);
     float visibility = 0.0;
     float currentDepth = shadowCoord.z;
 //  float  filterSize=  1.0 / 2048.0 * 10.0;
@@ -130,7 +134,7 @@ float findBlocker(sampler2D shadowMap, vec2 uv, float zReceiver) {
     // blocker search的大小
     float searchWidth = LIGHT_SIZE_UV * (zReceiver - NEAR_PLANE) / zReceiver;
     for(int i = 0; i < NUM_SAMPLES; i++) {
-        vec2 offset = 20.0 / 2048.0 * poissonDisk[i];
+        vec2 offset = 30.0 / 2048.0 * poissonDisk[i];
         vec4 rgbaDepth = texture2D(shadowMap, uv + offset);
         float depth = unpack(rgbaDepth);
 
@@ -208,12 +212,17 @@ void main(void) {
     // 注意，这里的vPositionFromLight已经是光源看向当前点的坐标（经过了光源mvp）
     vec3 shadowCoord = (vPositionFromLight.xyz / vPositionFromLight.w) / 2.0 + 0.5;
 
-    // visibility = useShadowMap(uShadowMap, vec4(shadowCoord, 1.0));
+    if(shadowCoord.z >= 1.0) {
+        visibility = 1.0;
+    } else {
+        visibility = useShadowMap(uShadowMap, vec4(shadowCoord, 1.0));
+    }
+    // visibility = 1.0;
 
-    float Stride = 100.0;
+    float Stride = 150.0;
     float filterSize = Stride / float(SHADOWMAP_SIZE * 10);
     // visibility = PCF(uShadowMap, vec4(shadowCoord, 1.0), filterSize);
-    visibility = PCSS(uShadowMap, vec4(shadowCoord, 1.0));
+    // visibility = PCSS(uShadowMap, vec4(shadowCoord, 1.0));
 
     vec3 phongColor = blinnPhong();
 
