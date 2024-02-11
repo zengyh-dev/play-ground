@@ -199,7 +199,7 @@ export class MeshRender {
         const gl = this.gl;
 
         // 如果为null，就会解除帧缓冲区的绑定
-        gl.bindFramebuffer(gl.FRAMEBUFFER, this.material.frameBuffer);
+        gl.bindFramebuffer(gl.FRAMEBUFFER, this.material.frameBuffer || null);
 
         // 为帧缓冲区准备
         if (this.material.frameBuffer != null) {

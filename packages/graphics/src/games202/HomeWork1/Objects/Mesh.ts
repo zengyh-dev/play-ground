@@ -1,6 +1,18 @@
+import { ReadonlyVec3 } from "gl-matrix";
+import { TRSTransform } from "../renderers/WebGLRenderer";
+
 export interface Attrib {
     name: string;
     array: Float32Array;
+}
+
+export interface Transform {
+    modelTransX: number;
+    modelTransY: number;
+    modelTransZ: number;
+    modelScaleX: number;
+    modelScaleY: number;
+    modelScaleZ: number;
 }
 
 export class Mesh {
@@ -15,12 +27,14 @@ export class Mesh {
     public normalsName;
     public texcoords;
     public texcoordsName;
+    public transform;
 
     constructor(
         verticesAttrib: Attrib,
         normalsAttrib: Attrib | null,
         texcoordsAttrib: Attrib | null,
-        indices: number[]
+        indices: number[],
+        transform: Transform
     ) {
         this.indices = indices;
         this.count = indices.length;
@@ -28,6 +42,13 @@ export class Mesh {
         this.hasNormals = false;
         this.hasTexcoords = false;
         // const extraAttribs = [];
+
+        const modelTranslation: ReadonlyVec3 = [transform.modelTransX, transform.modelTransY, transform.modelTransZ];
+        const modelScale: ReadonlyVec3 = [transform.modelScaleX, transform.modelScaleY, transform.modelScaleZ];
+        const meshTrans = new TRSTransform(modelTranslation, modelScale);
+        this.transform = meshTrans;
+
+        // let extraAttribs = [];
 
         if (verticesAttrib != null) {
             this.hasVertices = true;
@@ -46,7 +67,7 @@ export class Mesh {
         }
     }
 
-    static cube() {
+    static cube(transform: Transform) {
         // prettier-ignore
         const positions = [
 			// Front face
@@ -94,6 +115,13 @@ export class Mesh {
 			16, 17, 18, 16, 18, 19,   // right
 			20, 21, 22, 20, 22, 23,   // left
 		];
-        return new Mesh({ name: "aVertexPosition", array: new Float32Array(positions) }, null, null, indices);
+
+        return new Mesh(
+            { name: "aVertexPosition", array: new Float32Array(positions) },
+            null,
+            null,
+            indices,
+            transform
+        );
     }
 }

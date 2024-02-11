@@ -6,7 +6,7 @@ import { Texture } from "../Textures/Texture";
 
 export interface Uniform {
     type: string;
-    value: number[] | number | Texture | Iterable<number> | FBO;
+    value: number[] | number | Texture | Iterable<number> | FBO | null | undefined;
 }
 
 export interface Uniforms {
@@ -23,7 +23,7 @@ export class Material {
     frameBuffer;
 
     // Uniforms is a map, attribs is a Array
-    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string, frameBuffer: FBO) {
+    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string, frameBuffer?: FBO | null) {
         this.uniforms = uniforms;
         this.attribs = attribs;
         this.#vsSrc = vsSrc;

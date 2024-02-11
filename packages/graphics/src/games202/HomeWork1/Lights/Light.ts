@@ -1,6 +1,6 @@
 import { Material } from "../Materials/Materials";
-import LightCubeFragmentShader from "../Shaders/LightShader/fragment.glsl";
-import LightCubeVertexShader from "../Shaders/LightShader/vertex.glsl";
+import LightCubeFragmentShader from "../Shaders/LightShader/LightCubeFragment.frag";
+import LightCubeVertexShader from "../Shaders/LightShader/LightCubeVertex.vert";
 
 export class EmissiveMaterial extends Material {
     public intensity: number;
@@ -19,5 +19,9 @@ export class EmissiveMaterial extends Material {
 
         this.intensity = lightIntensity;
         this.color = lightColor;
+    }
+
+    GetIntensity() {
+        return [this.intensity * this.color[0], this.intensity * this.color[1], this.intensity * this.color[2]];
     }
 }

@@ -1,15 +1,11 @@
 import { ReadonlyVec3 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
-import { EmissiveMaterial } from "../Lights/Light";
-import { Mesh } from "../Objects/Mesh";
 import { MeshRender } from "./MeshRender";
+import { DirectionalLight } from "../Lights/DirectionalLight";
+import { WebglProgram } from "../Shaders/Shader";
 
-interface Light {
-    mat: EmissiveMaterial;
-    mesh: Mesh;
-}
 interface RendererLight {
-    entity: Light;
+    entity: DirectionalLight;
     meshRender: MeshRender;
 }
 
@@ -26,6 +22,7 @@ export class TRSTransform {
 export class WebGLRenderer {
     meshes: MeshRender[] = [];
     lights: RendererLight[] = [];
+    shadowMeshes: MeshRender[] = [];
     gl;
     camera;
 
@@ -35,78 +32,50 @@ export class WebGLRenderer {
         this.camera = camera;
     }
 
-    addLight(light: { mat: EmissiveMaterial; mesh: Mesh }) {
+    addLight(light: DirectionalLight) {
         console.log("lightsssss", light);
         this.lights.push({ entity: light, meshRender: new MeshRender(this.gl, light.mesh, light.mat) });
     }
 
-    addMesh(mesh: MeshRender) {
+    addMeshRender(mesh: MeshRender) {
         this.meshes.push(mesh);
     }
 
-    render(guiParams: {
-        modelTransX: number;
-        modelTransY: number;
-        modelTransZ: number;
-        modelScaleX: number;
-        modelScaleY: number;
-        modelScaleZ: number;
-    }) {
+    addShadowMeshRender(mesh: MeshRender) {
+        this.shadowMeshes.push(mesh);
+    }
+
+    render() {
         const gl = this.gl;
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
         gl.clearDepth(1.0); // Clear everything
         gl.enable(gl.DEPTH_TEST); // Enable depth testing
         gl.depthFunc(gl.LEQUAL); // Near things obscure far things
+        gl.enable(gl.CULL_FACE); // 消隐功能，不再绘制背面，提高绘制速度（理想情况是两倍）
 
-        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+        console.assert(this.lights.length != 0, "No light");
+        console.assert(this.lights.length == 1, "Multiple lights");
 
-        // Handle light
-        const timer = Date.now() * 0.00025;
-        const lightPos: ReadonlyVec3 = [
-            Math.sin(timer * 6) * 100,
-            Math.cos(timer * 4) * 150,
-            Math.cos(timer * 2) * 100,
-        ];
+        for (let l = 0; l < this.lights.length; l++) {
+            // Draw light
+            // TODO: Support all kinds of transform
+            this.lights[l].meshRender.mesh.transform.translate = this.lights[l].entity.lightPos;
+            this.lights[l].meshRender.draw(this.camera);
 
-        if (this.lights.length != 0) {
-            for (let l = 0; l < this.lights.length; l++) {
-                const trans = new TRSTransform(lightPos);
-                this.lights[l].meshRender.draw(this.camera, trans);
-
-                for (let i = 0; i < this.meshes.length; i++) {
-                    const mesh = this.meshes[i];
-
-                    const modelTranslation: ReadonlyVec3 = [
-                        guiParams.modelTransX,
-                        guiParams.modelTransY,
-                        guiParams.modelTransZ,
-                    ];
-                    const modelScale: ReadonlyVec3 = [
-                        guiParams.modelScaleX,
-                        guiParams.modelScaleY,
-                        guiParams.modelScaleZ,
-                    ];
-                    const meshTrans = new TRSTransform(modelTranslation, modelScale);
-
-                    this.gl.useProgram(mesh.shader.program.glShaderProgram);
-                    // WebGLProgram#getUniforms getUniforms() instead.
-                    const uLightPos = this.gl.getUniformLocation(
-                        mesh.shader.program.glShaderProgram as WebGLProgram,
-                        "uLightPos"
-                    );
-                    this.gl.uniform3fv(uLightPos, lightPos);
-                    // console.log("hhh", mesh.shader.program);
-                    // this.gl.uniform3fv(mesh.shader.program.uniforms.uLightPos, lightPos);
-                    mesh.draw(this.camera, meshTrans);
+            // Shadow pass
+            if (this.lights[l].entity.hasShadowMap == true) {
+                for (let i = 0; i < this.shadowMeshes.length; i++) {
+                    this.shadowMeshes[i].draw(this.camera);
                 }
             }
-        } else {
-            // Handle mesh(no light)
+
+            // Camera pass
             for (let i = 0; i < this.meshes.length; i++) {
-                const mesh = this.meshes[i];
-                const trans = new TRSTransform();
-                mesh.draw(this.camera, trans);
+                const shaderProgram = this.meshes[i].shader.program as WebglProgram;
+                this.gl.useProgram(shaderProgram.glShaderProgram);
+                this.gl.uniform3fv(shaderProgram.uniforms.uLightPos, this.lights[l].entity.lightPos);
+                this.meshes[i].draw(this.camera);
             }
         }
     }

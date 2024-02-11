@@ -10,14 +10,18 @@ import { Texture } from "../Textures/Texture";
 import { WebGLRenderer } from "../renderers/WebGLRenderer";
 import texture from "../../../../assets/mary/MC003_Kozakura_Mari.png";
 import { PhongMaterial } from "../Materials/PhongMaterial";
-import { ShadowMaterial } from "../Materials/ShadowMaterial";
+// import { ShadowMaterial } from "../Materials/ShadowMaterial";
 
 import phongFragment from "../Shaders/PhongShader/phongFragment.frag";
 import phongVertex from "../Shaders/PhongShader/phongVertex.vert";
 
-import shadowFragment from "../Shaders/shadowShader/shadowFragment.frag";
-import shadowVertex from "../Shaders/shadowShader/shadowVertex.vert";
+// import shadowFragment from "../Shaders/shadowShader/shadowFragment.frag";
+// import shadowVertex from "../Shaders/shadowShader/shadowVertex.vert";
+import SkyBoxFragment from '../Shaders/skyBoxShader/SkyBoxFragment.frag';
+import SkyBoxVertex from '../Shaders/skyBoxShader/SkyBoxVertex.vert';
+
 import { ReadonlyVec3 } from "gl-matrix";
+import { SkyBoxMaterial } from "../Materials/SkyBoxMaterial";
 
 console.log(texture);
 
@@ -39,7 +43,7 @@ export const loadOBJ = (
             console.log("model " + Math.round(percentComplete) + "% downloaded");
         }
     }
-    function onError() {}
+    function onError() { }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     new MTLLoader(manager).setPath(path).load(name + ".mtl", function (materials: any) {
@@ -49,8 +53,8 @@ export const loadOBJ = (
             .setPath(path)
             .load(
                 name + ".obj",
-                function (object) {
-                    object.traverse(function (child) {
+                function (object: any) {
+                    object.traverse(function (child: any) {
                         if (child.isMesh) {
                             const geo = child.geometry;
                             let mat;
@@ -97,20 +101,25 @@ export const loadOBJ = (
                                         phongVertex,
                                         phongFragment
                                     );
-                                    shadowMaterial = new ShadowMaterial(
-                                        light,
-                                        Translation,
-                                        Scale,
-                                        shadowVertex,
-                                        shadowFragment
-                                    );
+                                    // shadowMaterial = new ShadowMaterial(
+                                    //     light,
+                                    //     Translation,
+                                    //     Scale,
+                                    //     shadowVertex,
+                                    //     shadowFragment
+                                    // );
+                                    break;
+                                case 'SkyBoxMaterial':
+                                    material = new SkyBoxMaterial(SkyBoxVertex, SkyBoxFragment);
                                     break;
                             }
 
-                            if (material && shadowMaterial) {
+                            if (material) {
                                 const meshRender = new MeshRender(renderer.gl, mesh, material);
                                 renderer.addMeshRender(meshRender);
+                            }
 
+                            if (shadowMaterial) {
                                 const shadowMeshRender = new MeshRender(renderer.gl, mesh, shadowMaterial);
                                 renderer.addShadowMeshRender(shadowMeshRender);
                             }

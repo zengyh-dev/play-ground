@@ -20,14 +20,14 @@ export class FBO {
         framebuffer = gl.createFramebuffer();
         if (!framebuffer) {
             console.log("无法创建帧缓冲区对象");
-            return error();
+            error();
         }
 
         // 2. 创建纹理对象并设置其尺寸和参数
         texture = gl.createTexture();
         if (!texture) {
             console.log("无法创建纹理对象");
-            return error();
+            error();
         }
 
         gl.bindTexture(gl.TEXTURE_2D, texture);
@@ -35,13 +35,16 @@ export class FBO {
         //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+        if (!framebuffer) {
+            return;
+        }
         framebuffer.texture = texture; //将纹理对象存入framebuffer
 
         // 3. 创建渲染缓冲区对象
         depthBuffer = gl.createRenderbuffer();
         if (!depthBuffer) {
             console.log("无法创建渲染缓冲区对象");
-            return error();
+            error();
         }
 
         // 4. 绑定渲染缓冲区对象并设置其尺寸
@@ -65,7 +68,7 @@ export class FBO {
         const e = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
         if (gl.FRAMEBUFFER_COMPLETE !== e) {
             console.log("渲染缓冲区设置错误" + e.toString());
-            return error();
+            error();
         }
 
         // 取消当前的focus对象

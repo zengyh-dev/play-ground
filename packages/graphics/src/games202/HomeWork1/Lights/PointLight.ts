@@ -1,4 +1,7 @@
+import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Mesh } from "../Objects/Mesh";
+import { FBO } from "../Textures/FBO";
+import { setTransform } from "../utils/utils";
 import { EmissiveMaterial } from "./Light";
 
 export class PointLight {
@@ -10,8 +13,18 @@ export class PointLight {
      */
     public mesh;
     public mat;
-    constructor(lightIntensity: number, lightColor: number[]) {
-        this.mesh = Mesh.cube();
+    hasShadowMap;
+    fbo;
+
+    constructor(lightIntensity: number, lightColor: number[], hasShadowMap: boolean, gl: WebGLRenderingContextExtend) {
+        this.mesh = Mesh.cube(setTransform(0, 0, 0, 0.2, 0.2, 0.2));
         this.mat = new EmissiveMaterial(lightIntensity, lightColor);
+
+        this.hasShadowMap = hasShadowMap;
+        this.fbo = new FBO(gl);
+        if (!this.fbo) {
+            console.log("无法设置帧缓冲区对象");
+            return;
+        }
     }
 }

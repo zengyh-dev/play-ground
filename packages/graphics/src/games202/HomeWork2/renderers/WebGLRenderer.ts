@@ -3,9 +3,11 @@ import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { MeshRender } from "./MeshRender";
 import { DirectionalLight } from "../Lights/DirectionalLight";
 import { WebglProgram } from "../Shaders/Shader";
+import { EmissiveMaterial } from "../Lights/Light";
+import { PointLight } from "../Lights/PointLight";
 
 interface RendererLight {
-    entity: DirectionalLight;
+    entity: DirectionalLight | PointLight;
     meshRender: MeshRender;
 }
 
@@ -32,8 +34,8 @@ export class WebGLRenderer {
         this.camera = camera;
     }
 
-    addLight(light: DirectionalLight) {
-        console.log("lightsssss", light);
+    addLight(light: DirectionalLight | PointLight) {
+        console.log("lights", light);
         this.lights.push({ entity: light, meshRender: new MeshRender(this.gl, light.mesh, light.mat) });
     }
 

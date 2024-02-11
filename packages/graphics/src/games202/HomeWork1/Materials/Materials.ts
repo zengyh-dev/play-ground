@@ -1,11 +1,12 @@
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Shader } from "../Shaders/Shader";
+import { FBO } from "../Textures/FBO";
 import { Texture } from "../Textures/Texture";
 // import { Texture } from '../Textures/Texture';
 
 export interface Uniform {
     type: string;
-    value: number[] | number | Texture | Iterable<number>;
+    value: number[] | number | Texture | Iterable<number> | FBO;
 }
 
 export interface Uniforms {
@@ -19,19 +20,22 @@ export class Material {
     #fsSrc;
     uniforms;
     attribs;
+    frameBuffer;
 
     // Uniforms is a map, attribs is a Array
-    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string) {
+    constructor(uniforms: Uniforms, attribs: string[], vsSrc: string, fsSrc: string, frameBuffer: FBO) {
         this.uniforms = uniforms;
         this.attribs = attribs;
         this.#vsSrc = vsSrc;
         this.#fsSrc = fsSrc;
+        this.#flatten_uniforms = ["uViewMatrix", "uModelMatrix", "uProjectionMatrix", "uCameraPos", "uLightPos"];
 
-        this.#flatten_uniforms = ["uModelViewMatrix", "uProjectionMatrix", "uCameraPos", "uLightPos"];
         for (const k in uniforms) {
             this.#flatten_uniforms.push(k);
         }
         this.#flatten_attribs = attribs;
+
+        this.frameBuffer = frameBuffer;
     }
 
     setMeshAttribs(extraAttribs: string[]) {

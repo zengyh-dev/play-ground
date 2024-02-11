@@ -1,6 +1,6 @@
 import { Material } from "./Materials";
-import PhongVertexShader from "../Shaders/PhongShader/vertex.vert";
-import PhongFragmentShader from "../Shaders/PhongShader/fragment.frag";
+import { DirectionalLight } from "../Lights/DirectionalLight";
+import { Texture } from "../Textures/Texture";
 
 export class PhongMaterial extends Material {
     /**
@@ -11,36 +11,32 @@ export class PhongMaterial extends Material {
      * @param {float} intensity The light intensity
      * @memberof PhongMaterial
      */
-    constructor(color: number[], colorMap, specular: number[], intensity) {
-        let textureSample = 0;
 
-        if (colorMap != null) {
-            textureSample = 1;
-            super(
-                {
-                    uTextureSample: { type: "1i", value: textureSample },
-                    uSampler: { type: "texture", value: colorMap },
-                    uKd: { type: "3fv", value: color },
-                    uKs: { type: "3fv", value: specular },
-                    uLightIntensity: { type: "1f", value: intensity },
-                },
-                [],
-                PhongVertexShader,
-                PhongFragmentShader
-            );
-        } else {
-            //console.log(color);
-            super(
-                {
-                    uTextureSample: { type: "1i", value: textureSample },
-                    uKd: { type: "3fv", value: color },
-                    uKs: { type: "3fv", value: specular },
-                    uLightIntensity: { type: "1f", value: intensity },
-                },
-                [],
-                PhongVertexShader,
-                PhongFragmentShader
-            );
-        }
+    constructor(
+        color: Texture,
+        specular: number[],
+        light: DirectionalLight,
+        translate,
+        scale,
+        vertexShader: string,
+        fragmentShader: string
+    ) {
+        const lightMVP = light.CalcLightMVP(translate, scale);
+        const lightIntensity = light.mat.GetIntensity();
+
+        super(
+            {
+                // Phong
+                uSampler: { type: "texture", value: color },
+                uKs: { type: "3fv", value: specular },
+                uLightIntensity: { type: "3fv", value: lightIntensity },
+                // Shadow
+                uShadowMap: { type: "texture", value: light.fbo },
+                uLightMVP: { type: "matrix4fv", value: lightMVP },
+            },
+            [],
+            vertexShader,
+            fragmentShader
+        );
     }
 }

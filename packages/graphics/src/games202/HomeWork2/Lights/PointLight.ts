@@ -1,3 +1,4 @@
+import { ReadonlyVec3 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Mesh } from "../Objects/Mesh";
 import { FBO } from "../Textures/FBO";
@@ -13,12 +14,14 @@ export class PointLight {
      */
     public mesh;
     public mat;
+    public lightPos;
     hasShadowMap;
     fbo;
 
-    constructor(lightIntensity: number, lightColor: number[], hasShadowMap: boolean, gl: WebGLRenderingContextExtend) {
+    constructor(lightIntensity: ReadonlyVec3, lightPos: ReadonlyVec3, hasShadowMap: boolean, gl: WebGLRenderingContextExtend) {
         this.mesh = Mesh.cube(setTransform(0, 0, 0, 0.2, 0.2, 0.2));
-        this.mat = new EmissiveMaterial(lightIntensity, lightColor);
+        this.mat = new EmissiveMaterial(lightIntensity);
+        this.lightPos = lightPos;
 
         this.hasShadowMap = hasShadowMap;
         this.fbo = new FBO(gl);

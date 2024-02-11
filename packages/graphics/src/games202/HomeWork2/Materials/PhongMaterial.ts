@@ -1,6 +1,8 @@
 import { Material } from "./Materials";
 import { DirectionalLight } from "../Lights/DirectionalLight";
 import { Texture } from "../Textures/Texture";
+import { ReadonlyVec3 } from "gl-matrix";
+import { PointLight } from "../Lights/PointLight";
 
 export class PhongMaterial extends Material {
     /**
@@ -15,13 +17,16 @@ export class PhongMaterial extends Material {
     constructor(
         color: Texture,
         specular: number[],
-        light: DirectionalLight,
-        translate,
-        scale,
+        light: DirectionalLight | PointLight,
+        translate: ReadonlyVec3,
+        scale: ReadonlyVec3,
         vertexShader: string,
         fragmentShader: string
     ) {
-        const lightMVP = light.CalcLightMVP(translate, scale);
+        let lightMVP;
+        if(light instanceof DirectionalLight){
+            lightMVP = light.CalcLightMVP(translate, scale);
+        }
         const lightIntensity = light.mat.GetIntensity();
 
         super(

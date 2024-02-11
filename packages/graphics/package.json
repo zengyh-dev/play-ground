@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@types/dat.gui": "^0.7.12",
-        "@types/three": "^0.159.0",
+        "@types/three": "0.159.0",
         "cuon-matrix": "^0.4.0",
         "cuon-matrix-ts": "^1.1.0",
         "dat.gui": "^0.7.9",

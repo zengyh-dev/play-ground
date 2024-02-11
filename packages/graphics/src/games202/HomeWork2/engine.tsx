@@ -11,8 +11,31 @@ import { setSize, setTransform } from "./utils/utils";
 import { DirectionalLight } from "./Lights/DirectionalLight";
 
 import { ReadonlyVec3 } from "gl-matrix";
+import { PointLight } from "./Lights/PointLight";
+import { CubeTexture } from "./Textures/CubeTexture";
 
-const cameraPosition = [30, 30, 30];
+
+const cameraPosition = [50, 0, 100];
+
+let precomputeLT = [];
+let precomputeL = [];
+
+const envmap = [
+    'assets/cubemap/GraceCathedral',
+    'assets/cubemap/Indoor',
+    'assets/cubemap/Skybox',
+];
+
+const guiParams = {
+    envmapId: 0
+};
+
+const cubeMaps: CubeTexture[] = [];
+
+const resolution = 2048;
+
+let envMapPass = null;
+
 
 function GAMES202Main() {
     const draw = (gl: WebGLRenderingContextExtend, canvas: HTMLCanvasElement) => {
@@ -27,7 +50,7 @@ function GAMES202Main() {
             return;
         }
 
-        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 1e-2, 1000);
         camera.position.set(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
 
         setSize(camera, canvas.clientWidth, canvas.clientHeight);
@@ -48,21 +71,32 @@ function GAMES202Main() {
 
         // Add lights
         // light - is open shadow map == true
-        const lightPos: ReadonlyVec3 = [0, 80, 80];
-        const focalPoint: ReadonlyVec3 = [0, 0, 0];
-        const lightUp: ReadonlyVec3 = [0, 1, 0];
-        const directionLight = new DirectionalLight(5000, [1, 1, 1], lightPos, focalPoint, lightUp, true, renderer.gl);
-        renderer.addLight(directionLight);
+        const lightPos: ReadonlyVec3 = [0, 10000, 0];
+        const lightRadiance: ReadonlyVec3 = [1, 0, 0];
+        // const focalPoint: ReadonlyVec3 = [0, 0, 0];
+        // const lightUp: ReadonlyVec3 = [0, 1, 0];
+        const pointLight = new PointLight(lightRadiance, lightPos, false, renderer.gl);
+        renderer.addLight(pointLight);
 
         // Add shapes
+        let skyBoxTransform = setTransform(0, 50, 50, 150, 150, 150);
+        let boxTransform = setTransform(0, 0, 0, 200, 200, 200);
+        let box2Transform = setTransform(0, -10, 0, 20, 20, 20);
 
-        const floorTransform = setTransform(0, 0, -30, 10, 10, 10);
-        const obj1Transform = setTransform(0, 0, 0, 20, 20, 20);
-        const obj2Transform = setTransform(40, 0, -40, 10, 10, 10);
-
-        loadOBJ(renderer, "assets/mary/", "Marry", "PhongMaterial", obj1Transform);
-        loadOBJ(renderer, "assets/mary/", "Marry", "PhongMaterial", obj2Transform);
-        loadOBJ(renderer, "assets/floor/", "floor", "PhongMaterial", floorTransform);
+        envmap.forEach(async (curEnvMap, index) => {
+            let urls = [
+                curEnvMap + '/posx.jpg',
+                curEnvMap + '/negx.jpg',
+                curEnvMap + '/posy.jpg',
+                curEnvMap + '/negy.jpg',
+                curEnvMap + '/posz.jpg',
+                curEnvMap + '/negz.jpg',
+            ];
+            cubeMaps.push(new CubeTexture(gl, urls));
+            await cubeMaps[index].init();
+        });
+        // load skybox
+        loadOBJ(renderer, 'assets/testObj/', 'testObj', 'SkyBoxMaterial', skyBoxTransform);
 
         // let floorTransform = setTransform(0, 0, 0, 100, 100, 100);
         // let cubeTransform = setTransform(0, 50, 0, 10, 50, 10);
@@ -75,9 +109,9 @@ function GAMES202Main() {
         function createGUI() {
             const gui = new dat.GUI();
             console.log(gui);
-            // const panelModel = gui.addFolder('Model properties');
-            // panelModelTrans.add(GUIParams, 'x').name('X');
-            // panelModel.open();
+            const panelModel = gui.addFolder('Switch Environemtn Map');
+            panelModel.add(guiParams, 'envmapId', { 'GraceGathedral': 0, 'Indoor': 1, 'Skybox': 2 }).name('Envmap Name');
+            panelModel.open();
         }
         createGUI();
 

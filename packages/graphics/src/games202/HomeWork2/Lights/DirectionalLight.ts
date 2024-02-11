@@ -15,8 +15,7 @@ export class DirectionalLight {
     public hasShadowMap;
 
     constructor(
-        lightIntensity: number,
-        lightColor: number[],
+        lightRadiance: ReadonlyVec3,
         lightPos: ReadonlyVec3,
         focalPoint: ReadonlyVec3,
         lightUp: ReadonlyVec3,
@@ -24,7 +23,7 @@ export class DirectionalLight {
         gl: WebGLRenderingContextExtend
     ) {
         this.mesh = Mesh.cube(setTransform(0, 0, 0, 0.2, 0.2, 0.2));
-        this.mat = new EmissiveMaterial(lightIntensity, lightColor);
+        this.mat = new EmissiveMaterial(lightRadiance);
         this.lightPos = lightPos;
         this.focalPoint = focalPoint;
         this.lightUp = lightUp;
