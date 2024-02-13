@@ -8,7 +8,7 @@ import { Texture } from "../Textures/Texture";
 // import VertexShader from "../Shaders/PhongShader/vertex.vert";
 // import FragmentShader from "../Shaders/PhongShader/fragment.frag";
 import { WebGLRenderer } from "../renderers/WebGLRenderer";
-import texture from "../../../../assets/mary/MC003_Kozakura_Mari.png";
+import texture from "../assets/mary/MC003_Kozakura_Mari.png";
 import { PhongMaterial } from "../Materials/PhongMaterial";
 import { ShadowMaterial } from "../Materials/ShadowMaterial";
 
@@ -39,7 +39,7 @@ export const loadOBJ = (
             console.log("model " + Math.round(percentComplete) + "% downloaded");
         }
     }
-    function onError() {}
+    function onError() { }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     new MTLLoader(manager).setPath(path).load(name + ".mtl", function (materials: any) {
@@ -108,6 +108,7 @@ export const loadOBJ = (
                             }
 
                             if (material && shadowMaterial) {
+                                console.log('🔥add material', material);
                                 const meshRender = new MeshRender(renderer.gl, mesh, material);
                                 renderer.addMeshRender(meshRender);
 

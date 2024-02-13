@@ -1,7 +1,7 @@
 import { ReadonlyVec3 } from "gl-matrix";
 import { Material } from "../Materials/Materials";
-import LightCubeFragmentShader from "../Shaders/LightShader/LightCubeFragment.frag";
-import LightCubeVertexShader from "../Shaders/LightShader/LightCubeVertex.vert";
+import LightCubeFragmentShader from "../Shaders/LightShader/LightCube.frag";
+import LightCubeVertexShader from "../Shaders/LightShader/LightCube.vert";
 
 export class EmissiveMaterial extends Material {
     public color: ReadonlyVec3;

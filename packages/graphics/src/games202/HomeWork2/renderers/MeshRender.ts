@@ -3,7 +3,7 @@ import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { Mesh } from "../Objects/Mesh";
 import { Material } from "../Materials/Materials";
 import { Texture } from "../Textures/Texture";
-import { resolution } from "../utils/constant";
+import { cubeMaps, guiParams, precomputeLT, resolution } from "../utils/constant";
 
 export class MeshRender {
     #vertexBuffer;
@@ -191,6 +191,12 @@ export class MeshRender {
                 gl.bindTexture(gl.TEXTURE_2D, texture.texture);
                 gl.uniform1i(this.shader.program.uniforms[k], textureNum);
                 textureNum += 1;
+            } else if (this.material.uniforms[k].type == 'CubeTexture') {
+                gl.activeTexture(gl.TEXTURE0 + textureNum);
+                //console.log(cubeMap.texture)
+                gl.bindTexture(gl.TEXTURE_CUBE_MAP, cubeMaps[guiParams.envmapId].texture);
+                gl.uniform1i(this.shader.program.uniforms[k], textureNum);
+                textureNum += 1;
             }
         }
     }
@@ -215,6 +221,16 @@ export class MeshRender {
 
         // 7. 告知WebGL系统所使用的程序对象，可以在绘制的时候根据需要切换
         gl.useProgram(this.shader.program.glShaderProgram);
+
+        // Bind attribute mat3 - LT
+        const buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(precomputeLT[guiParams.envmapId]), gl.STATIC_DRAW);
+
+        for (var ii = 0; ii < 3; ++ii) {
+            gl.enableVertexAttribArray(this.shader.program.attribs['aPrecomputeLT'] + ii);
+            gl.vertexAttribPointer(this.shader.program.attribs['aPrecomputeLT'] + ii, 3, gl.FLOAT, false, 36, ii * 12);
+        }
 
         // Bind geometry information
         this.bindGeometryInfo();

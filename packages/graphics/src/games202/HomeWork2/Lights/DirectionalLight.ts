@@ -1,9 +1,9 @@
 import { ReadonlyVec3, mat4 } from "gl-matrix";
 import { Mesh } from "../Objects/Mesh";
-import { EmissiveMaterial } from "./Light";
+import {EmissiveMaterial} from './Light';
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
 import { FBO } from "../Textures/FBO";
-import { setTransform } from "../utils/utils";
+import { setTransform } from "../utils";
 
 export class DirectionalLight {
     public mesh;

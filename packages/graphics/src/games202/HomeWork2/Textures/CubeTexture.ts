@@ -12,19 +12,22 @@ export class CubeTexture {
     async init() {
         var img = new Array(6);
         const gl = this.gl;
+
         for (let i = 0; i < 6; i++) {
             img[i] = new Image();
-            img[i].src = this.urls[i];
+            const imgUrl = new URL(this.urls[i], import.meta.url).href;
+            img[i].src = imgUrl;
+            // console.log('loadd img', imgUrl);
             const loadImage = async (img: HTMLImageElement) => {
                 return new Promise((resolve, reject) => {
                     img.onload = async () => {
-                        console.log("Image Loaded");
                         resolve(true);
                     };
                 });
             };
             await loadImage(img[i]);
         }
+        // console.log('imgs', img);
 
         this.texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_CUBE_MAP, this.texture);
@@ -41,6 +44,5 @@ export class CubeTexture {
             gl.texParameteri(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
         }
         gl.generateMipmap(gl.TEXTURE_CUBE_MAP);
-
     }
 }

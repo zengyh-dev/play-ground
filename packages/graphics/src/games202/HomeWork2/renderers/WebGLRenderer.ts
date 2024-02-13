@@ -1,10 +1,12 @@
-import { ReadonlyVec3 } from "gl-matrix";
+import { ReadonlyVec3, mat4 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
-import { MeshRender } from "./MeshRender";
+import { MeshRender } from './MeshRender';
 import { DirectionalLight } from "../Lights/DirectionalLight";
 import { WebglProgram } from "../Shaders/Shader";
-import { EmissiveMaterial } from "../Lights/Light";
+// import { EmissiveMaterial } from "../Lights/Light";
 import { PointLight } from "../Lights/PointLight";
+import { getMat3ValueFromRGB } from "../utils";
+import { guiParams } from "../utils/constant";
 
 interface RendererLight {
     entity: DirectionalLight | PointLight;
@@ -27,6 +29,7 @@ export class WebGLRenderer {
     shadowMeshes: MeshRender[] = [];
     gl;
     camera;
+    precomputeL: any;
 
     constructor(gl: WebGLRenderingContextExtend, camera: THREE.Camera) {
         this.gl = gl;
@@ -47,6 +50,10 @@ export class WebGLRenderer {
         this.shadowMeshes.push(mesh);
     }
 
+    addPrecomputeL(precomputeL: any) {
+        this.precomputeL = precomputeL;
+    }
+
     render() {
         const gl = this.gl;
 
@@ -54,7 +61,7 @@ export class WebGLRenderer {
         gl.clearDepth(1.0); // Clear everything
         gl.enable(gl.DEPTH_TEST); // Enable depth testing
         gl.depthFunc(gl.LEQUAL); // Near things obscure far things
-        gl.enable(gl.CULL_FACE); // 消隐功能，不再绘制背面，提高绘制速度（理想情况是两倍）
+        // gl.enable(gl.CULL_FACE); // 消隐功能，不再绘制背面，提高绘制速度（理想情况是两倍）
 
         console.assert(this.lights.length != 0, "No light");
         console.assert(this.lights.length == 1, "Multiple lights");
@@ -77,6 +84,45 @@ export class WebGLRenderer {
                 const shaderProgram = this.meshes[i].shader.program as WebglProgram;
                 this.gl.useProgram(shaderProgram.glShaderProgram);
                 this.gl.uniform3fv(shaderProgram.uniforms.uLightPos, this.lights[l].entity.lightPos);
+
+                for (let k in this.meshes[i].material.uniforms) {
+
+                    let cameraModelMatrix = mat4.create();
+                    //mat4.fromRotation(cameraModelMatrix, timer, [0, 1, 0]);
+
+                    let precomputeLMat3 = getMat3ValueFromRGB(this.precomputeL[guiParams.envmapId]);
+                    if (k == 'uMoveWithCamera') { // The rotation of the skybox
+                        gl.uniformMatrix4fv(
+                            shaderProgram.uniforms[k],
+                            false,
+                            cameraModelMatrix);
+                    }
+
+                    if (k == 'uPrecomputeL0') { // The rotation of the skybox
+                        gl.uniformMatrix3fv(
+                            shaderProgram.uniforms[k],
+                            false,
+                            precomputeLMat3[0]);
+                    }
+
+                    if (k == 'uPrecomputeL1') { // The rotation of the skybox
+                        gl.uniformMatrix3fv(
+                            shaderProgram.uniforms[k],
+                            false,
+                            precomputeLMat3[1]);
+                    }
+
+                    if (k == 'uPrecomputeL2') { // The rotation of the skybox
+                        gl.uniformMatrix3fv(
+                            shaderProgram.uniforms[k],
+                            false,
+                            precomputeLMat3[2]);
+                    }
+
+                    // Bonus - Fast Spherical Harmonic Rotation
+                    // let precomputeL_RGBMat3 = getRotationPrecomputeL(precomputeL[guiParams.envmapId], cameraModelMatrix);
+                }
+
                 this.meshes[i].draw(this.camera);
             }
         }

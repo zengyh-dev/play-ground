@@ -60,8 +60,8 @@ function GAMES202Main() {
         const obj1Transform = setTransform(0, 0, 0, 20, 20, 20);
         const obj2Transform = setTransform(40, 0, -40, 10, 10, 10);
 
-        loadOBJ(renderer, "assets/mary/", "Marry", "PhongMaterial", obj1Transform);
-        loadOBJ(renderer, "assets/mary/", "Marry", "PhongMaterial", obj2Transform);
+        loadOBJ(renderer, "assets/mary/", "mary", "PhongMaterial", obj1Transform);
+        loadOBJ(renderer, "assets/mary/", "mary", "PhongMaterial", obj2Transform);
         loadOBJ(renderer, "assets/floor/", "floor", "PhongMaterial", floorTransform);
 
         // let floorTransform = setTransform(0, 0, 0, 100, 100, 100);

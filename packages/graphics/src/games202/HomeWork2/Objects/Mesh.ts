@@ -1,5 +1,5 @@
 import { ReadonlyVec3 } from "gl-matrix";
-import { TRSTransform } from "../renderers/WebGLRenderer";
+import { TRSTransform } from "../Renderers/WebGLRenderer";
 
 export interface Attrib {
     name: string;

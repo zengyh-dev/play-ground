@@ -10,8 +10,3 @@ export class SkyBoxMaterial extends Material {
         }, [], vertexShader, fragmentShader, null);
     }
 }
-
-export async function buildSkyBoxMaterial(vertexShader: string, fragmentShader: string) {
-    return new SkyBoxMaterial(vertexShader, fragmentShader);
-
-}

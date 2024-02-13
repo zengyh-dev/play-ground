@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-export async function loadShaderFile(filename: string) {
+export const loadShaderFile = async (filename: string) => {
     return new Promise((resolve) => {
         const loader = new THREE.FileLoader();
 
@@ -9,7 +9,7 @@ export async function loadShaderFile(filename: string) {
             //console.log(data);
         });
     });
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function getShaderString(this: any, filename: string) {

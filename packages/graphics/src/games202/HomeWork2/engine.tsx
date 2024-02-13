@@ -5,32 +5,53 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 import Canvas from "../../canvas";
 import { WebGLRenderingContextExtend } from "../../canvas/interface";
 
-import { WebGLRenderer } from "./renderers/WebGLRenderer";
-import { loadOBJ } from "./Loads/loadObJ";
-import { setSize, setTransform } from "./utils/utils";
-import { DirectionalLight } from "./Lights/DirectionalLight";
+import { WebGLRenderer } from "./Renderers/WebGLRenderer";
+import { loadOBJ } from "./Loads/LoadObj";
+import { setSize, setTransform } from "./utils";
 
 import { ReadonlyVec3 } from "gl-matrix";
 import { PointLight } from "./Lights/PointLight";
 import { CubeTexture } from "./Textures/CubeTexture";
+// import { loadShaderFile } from "./Loads/loadShader";
 
+import GraceCathedralLight from '@assets/cubemap/GraceCathedral/light.txt?raw';
+import GraceCathedralTransport from '@assets/cubemap/GraceCathedral/transport.txt?raw';
+import IndoorLight from '@assets/cubemap/Indoor/light.txt?raw';
+import IndoorTransport from '@assets/cubemap/Indoor/transport.txt?raw';
+import SkyboxLight from '@assets/cubemap/Skybox/light.txt?raw';
+import SkyboxTransport from '@assets/cubemap/Skybox/transport.txt?raw';
+import { cubeMaps, guiParams, precomputeL, precomputeLT } from "./utils/constant";
+
+interface EnvLight {
+    [key: string]: {
+        light: string;
+        trans: string;
+    };
+}
+
+const envLight: EnvLight = {
+    GraceCathedral: {
+        light: GraceCathedralLight,
+        trans: GraceCathedralTransport
+    },
+    Indoor: {
+        light: IndoorLight,
+        trans: IndoorTransport
+    },
+    Skybox: {
+        light: SkyboxLight,
+        trans: SkyboxTransport
+    }
+};
 
 const cameraPosition = [50, 0, 100];
 
-let precomputeLT = [];
-let precomputeL = [];
+// const envmap = [
+//     'GraceCathedral',
+//     'Indoor',
+//     'Skybox',
+// ];
 
-const envmap = [
-    'assets/cubemap/GraceCathedral',
-    'assets/cubemap/Indoor',
-    'assets/cubemap/Skybox',
-];
-
-const guiParams = {
-    envmapId: 0
-};
-
-const cubeMaps: CubeTexture[] = [];
 
 const resolution = 2048;
 
@@ -38,12 +59,16 @@ let envMapPass = null;
 
 
 function GAMES202Main() {
-    const draw = (gl: WebGLRenderingContextExtend, canvas: HTMLCanvasElement) => {
+    const draw = async (gl: WebGLRenderingContextExtend, canvas: HTMLCanvasElement) => {
         // const canvas = document.getElementById("webgl") as HTMLCanvasElement;
         console.log(canvas);
         if (!canvas) {
+            console.log("No Canvas!");
             return;
         }
+
+        canvas.width = window.screen.width;
+        canvas.height = window.screen.height;
 
         if (!gl) {
             console.log("Unable to initialize WebGL. Your browser or machine may not support it.");
@@ -73,38 +98,63 @@ function GAMES202Main() {
         // light - is open shadow map == true
         const lightPos: ReadonlyVec3 = [0, 10000, 0];
         const lightRadiance: ReadonlyVec3 = [1, 0, 0];
-        // const focalPoint: ReadonlyVec3 = [0, 0, 0];
-        // const lightUp: ReadonlyVec3 = [0, 1, 0];
         const pointLight = new PointLight(lightRadiance, lightPos, false, renderer.gl);
         renderer.addLight(pointLight);
 
         // Add shapes
-        let skyBoxTransform = setTransform(0, 50, 50, 150, 150, 150);
-        let boxTransform = setTransform(0, 0, 0, 200, 200, 200);
-        let box2Transform = setTransform(0, -10, 0, 20, 20, 20);
+        const skyBoxTransform = setTransform(0, 50, 50, 150, 150, 150);
+        const boxTransform = setTransform(0, 0, 0, 200, 200, 200);
+        const box2Transform = setTransform(0, -10, 0, 20, 20, 20);
 
-        envmap.forEach(async (curEnvMap, index) => {
-            let urls = [
-                curEnvMap + '/posx.jpg',
-                curEnvMap + '/negx.jpg',
-                curEnvMap + '/posy.jpg',
-                curEnvMap + '/negy.jpg',
-                curEnvMap + '/posz.jpg',
-                curEnvMap + '/negz.jpg',
-            ];
+        const envMap = Object.keys(envLight);
+        const cubeMapList = [
+            '/posx.jpg',
+            '/negx.jpg',
+            '/posy.jpg',
+            '/negy.jpg',
+            '/posz.jpg',
+            '/negz.jpg'
+        ];
+        for (let i = 0; i < envMap.length; i++) {
+            const urls = cubeMapList.map((cubemapName) => {
+                return '../../../assets/cubemap/' + envMap[i] + cubemapName;
+            });
             cubeMaps.push(new CubeTexture(gl, urls));
-            await cubeMaps[index].init();
-        });
+            await cubeMaps[i].init();
+        }
+
         // load skybox
-        loadOBJ(renderer, 'assets/testObj/', 'testObj', 'SkyBoxMaterial', skyBoxTransform);
+        loadOBJ(renderer, '../../../assets/testObj/', 'testObj', 'SkyBoxMaterial', skyBoxTransform);
 
-        // let floorTransform = setTransform(0, 0, 0, 100, 100, 100);
-        // let cubeTransform = setTransform(0, 50, 0, 10, 50, 10);
-        // let sphereTransform = setTransform(30, 10, 0, 10, 10, 10);
+        // file parsing
+        for (let i = 0; i < envMap.length; i++) {
+            const curLight = envLight[envMap[i]].light;
+            const curTransport = envLight[envMap[i]].trans;
+            // console.log('curLight', curLight);
+            // console.log('curTransport', curTransport);
 
-        //loadOBJ(renderer, 'assets/basic/', 'cube', 'PhongMaterial', cubeTransform);
-        // loadOBJ(renderer, 'assets/basic/', 'sphere', 'PhongMaterial', sphereTransform);
-        //loadOBJ(renderer, 'assets/basic/', 'plane', 'PhongMaterial', floorTransform);
+            let preArray = curTransport.split(/[(\r\n)\r\n' ']+/);
+            let lineArray = [];
+            precomputeLT[i] = [];
+            for (let j = 1; j <= Number(preArray.length) - 2; j++) {
+                precomputeLT[i][j - 1] = Number(preArray[j]);
+            }
+
+            precomputeL[i] = curLight.split(/[(\r\n)\r\n]+/);
+            precomputeL[i].pop();
+            for (let j = 0; j < 9; j++) {
+                lineArray = precomputeL[i][j].split(' ');
+                for (let k = 0; k < 3; k++) {
+                    lineArray[k] = Number(lineArray[k]);
+                }
+                precomputeL[i][j] = lineArray;
+            }
+            console.log('precompute' + precomputeL);
+        }
+        renderer.addPrecomputeL(precomputeL);
+        // // TODO: load model - Add your Material here
+        loadOBJ(renderer, '../../../assets/mary/', 'mary', 'PRTMaterial', box2Transform);
+
 
         function createGUI() {
             const gui = new dat.GUI();
