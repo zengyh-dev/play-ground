@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex
+# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/Iex/libIex.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Iex/libIex.a")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIex.a" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIex.a")
     execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIex.a")
@@ -46,20 +46,20 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/Iex/CMakeFiles/Iex.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Iex/CMakeFiles/Iex.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/OpenEXR" TYPE FILE FILES
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexBaseExc.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexMathExc.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexErrnoExc.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexMacros.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/Iex.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexNamespace.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexExport.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Iex/IexForward.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexBaseExc.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexMathExc.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexErrnoExc.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexMacros.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/Iex.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexNamespace.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexExport.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Iex/IexForward.h"
     )
 endif()
 

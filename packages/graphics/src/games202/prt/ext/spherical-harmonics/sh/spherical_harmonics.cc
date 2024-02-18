@@ -623,6 +623,7 @@ std::unique_ptr<std::vector<double>> ProjectFunction(
 
   // This is the approach demonstrated in [1] and is useful for arbitrary
   // functions on the sphere that are represented analytically.
+  // sample_side: 样本点的边长，即 sample_count 的平方根
   const int sample_side = static_cast<int>(floor(sqrt(sample_count)));
   std::unique_ptr<std::vector<double>> coeffs(new std::vector<double>());
   coeffs->assign(GetCoefficientCount(order), 0.0);
@@ -636,6 +637,8 @@ std::unique_ptr<std::vector<double>> ProjectFunction(
       double alpha = (t + rng(gen)) / sample_side;
       double beta = (p + rng(gen)) / sample_side;
       // See http://www.bogotobogo.com/Algorithms/uniform_distribution_sphere.php
+      // 对于每个样本点，计算球面坐标 phi 和 theta
+      // 其中 phi 的取值范围是 [0, 2π)，theta 的取值范围是 [0, π]
       double phi = 2.0 * M_PI * beta;
       double theta = acos(2.0 * alpha - 1.0);
 
@@ -646,6 +649,7 @@ std::unique_ptr<std::vector<double>> ProjectFunction(
       // function's value and accumulate them over all generated samples
       for (int l = 0; l <= order; l++) {
         for (int m = -l; m <= l; m++) {
+          // 对于每个样本点，计算球谐函数的值，并将球谐函数值乘以球面函数值累加到对应的投影系数中
           double sh = EvalSH(l, m, phi, theta);
           (*coeffs)[GetIndex(l, m)] += func_value * sh;
         }
@@ -656,6 +660,7 @@ std::unique_ptr<std::vector<double>> ProjectFunction(
   // scale by the probability of a particular sample, which is
   // 4pi/sample_side^2. 4pi for the surface area of a unit sphere, and
   // 1/sample_side^2 for the number of samples drawn uniformly.
+  // 将投影系数乘以权重，权重的计算公式是 4π/sample_side^2
   double weight = 4.0 * M_PI / (sample_side * sample_side);
   for (unsigned int i = 0; i < coeffs->size(); i++) {
      (*coeffs)[i] *= weight;

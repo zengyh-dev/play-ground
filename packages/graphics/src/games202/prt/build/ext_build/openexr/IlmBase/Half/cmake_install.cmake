@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Half
+# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Half
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/Half/libHalf.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Half/libHalf.a")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHalf.a" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHalf.a")
     execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHalf.a")
@@ -46,15 +46,15 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/Half/CMakeFiles/Half.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Half/CMakeFiles/Half.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/OpenEXR" TYPE FILE FILES
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Half/half.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Half/halfFunction.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Half/halfExport.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/Half/halfLimits.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Half/half.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Half/halfFunction.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Half/halfExport.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Half/halfLimits.h"
     )
 endif()
 

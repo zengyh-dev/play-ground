@@ -1,8 +1,8 @@
 ext_build/nanogui/CMakeFiles/nanogui.dir/src/texture.cpp.o: \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/src/texture.cpp \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/texture.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/object.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/common.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/src/texture.cpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/texture.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/object.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/common.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \
@@ -364,9 +364,9 @@ ext_build/nanogui/CMakeFiles/nanogui.dir/src/texture.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_wctrans_t.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/vector.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/traits.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/vector.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/math.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/ext/nanovg/src/stb_image.h
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/ext/nanovg/src/stb_image.h

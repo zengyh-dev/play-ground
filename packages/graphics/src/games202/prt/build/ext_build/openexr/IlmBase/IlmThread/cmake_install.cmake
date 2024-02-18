@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread
+# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIlmThread.a" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIlmThread.a")
     execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libIlmThread.a")
@@ -46,18 +46,18 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/openexr/IlmBase/IlmThread/CMakeFiles/IlmThread.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/IlmThread/CMakeFiles/IlmThread.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/OpenEXR" TYPE FILE FILES
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadPool.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThread.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadNamespace.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadExport.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/openexr/IlmBase/IlmThread/IlmThreadForward.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadPool.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThread.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadNamespace.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadExport.h"
+    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/IlmThread/IlmThreadForward.h"
     )
 endif()
 

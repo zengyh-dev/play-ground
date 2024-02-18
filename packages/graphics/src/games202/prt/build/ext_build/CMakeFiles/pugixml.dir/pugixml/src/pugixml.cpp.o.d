@@ -1,7 +1,7 @@
 ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o: \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.cpp \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.hpp \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugiconfig.hpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.cpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.hpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugiconfig.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stddef.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \

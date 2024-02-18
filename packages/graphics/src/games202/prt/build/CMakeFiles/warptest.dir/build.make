@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/warptest.dir/depend.make
@@ -70,88 +70,88 @@ include CMakeFiles/warptest.dir/progress.make
 include CMakeFiles/warptest.dir/flags.make
 
 CMakeFiles/warptest.dir/src/warp.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/warp.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warp.cpp
+CMakeFiles/warptest.dir/src/warp.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warp.cpp
 CMakeFiles/warptest.dir/src/warp.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/warptest.dir/src/warp.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/warp.cpp.o -MF CMakeFiles/warptest.dir/src/warp.cpp.o.d -o CMakeFiles/warptest.dir/src/warp.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/warptest.dir/src/warp.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/warp.cpp.o -MF CMakeFiles/warptest.dir/src/warp.cpp.o.d -o CMakeFiles/warptest.dir/src/warp.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warp.cpp
 
 CMakeFiles/warptest.dir/src/warp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/warp.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warp.cpp > CMakeFiles/warptest.dir/src/warp.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warp.cpp > CMakeFiles/warptest.dir/src/warp.cpp.i
 
 CMakeFiles/warptest.dir/src/warp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/warp.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warp.cpp -o CMakeFiles/warptest.dir/src/warp.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warp.cpp -o CMakeFiles/warptest.dir/src/warp.cpp.s
 
 CMakeFiles/warptest.dir/src/warptest.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/warptest.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warptest.cpp
+CMakeFiles/warptest.dir/src/warptest.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warptest.cpp
 CMakeFiles/warptest.dir/src/warptest.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/warptest.dir/src/warptest.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/warptest.cpp.o -MF CMakeFiles/warptest.dir/src/warptest.cpp.o.d -o CMakeFiles/warptest.dir/src/warptest.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warptest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/warptest.dir/src/warptest.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/warptest.cpp.o -MF CMakeFiles/warptest.dir/src/warptest.cpp.o.d -o CMakeFiles/warptest.dir/src/warptest.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warptest.cpp
 
 CMakeFiles/warptest.dir/src/warptest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/warptest.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warptest.cpp > CMakeFiles/warptest.dir/src/warptest.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warptest.cpp > CMakeFiles/warptest.dir/src/warptest.cpp.i
 
 CMakeFiles/warptest.dir/src/warptest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/warptest.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/warptest.cpp -o CMakeFiles/warptest.dir/src/warptest.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/warptest.cpp -o CMakeFiles/warptest.dir/src/warptest.cpp.s
 
 CMakeFiles/warptest.dir/src/microfacet.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/microfacet.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/microfacet.cpp
+CMakeFiles/warptest.dir/src/microfacet.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/microfacet.cpp
 CMakeFiles/warptest.dir/src/microfacet.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/warptest.dir/src/microfacet.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/microfacet.cpp.o -MF CMakeFiles/warptest.dir/src/microfacet.cpp.o.d -o CMakeFiles/warptest.dir/src/microfacet.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/microfacet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/warptest.dir/src/microfacet.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/microfacet.cpp.o -MF CMakeFiles/warptest.dir/src/microfacet.cpp.o.d -o CMakeFiles/warptest.dir/src/microfacet.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/microfacet.cpp
 
 CMakeFiles/warptest.dir/src/microfacet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/microfacet.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/microfacet.cpp > CMakeFiles/warptest.dir/src/microfacet.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/microfacet.cpp > CMakeFiles/warptest.dir/src/microfacet.cpp.i
 
 CMakeFiles/warptest.dir/src/microfacet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/microfacet.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/microfacet.cpp -o CMakeFiles/warptest.dir/src/microfacet.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/microfacet.cpp -o CMakeFiles/warptest.dir/src/microfacet.cpp.s
 
 CMakeFiles/warptest.dir/src/object.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/object.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/object.cpp
+CMakeFiles/warptest.dir/src/object.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/object.cpp
 CMakeFiles/warptest.dir/src/object.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warptest.dir/src/object.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/object.cpp.o -MF CMakeFiles/warptest.dir/src/object.cpp.o.d -o CMakeFiles/warptest.dir/src/object.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warptest.dir/src/object.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/object.cpp.o -MF CMakeFiles/warptest.dir/src/object.cpp.o.d -o CMakeFiles/warptest.dir/src/object.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/object.cpp
 
 CMakeFiles/warptest.dir/src/object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/object.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/object.cpp > CMakeFiles/warptest.dir/src/object.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/object.cpp > CMakeFiles/warptest.dir/src/object.cpp.i
 
 CMakeFiles/warptest.dir/src/object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/object.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/object.cpp -o CMakeFiles/warptest.dir/src/object.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/object.cpp -o CMakeFiles/warptest.dir/src/object.cpp.s
 
 CMakeFiles/warptest.dir/src/proplist.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/proplist.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/proplist.cpp
+CMakeFiles/warptest.dir/src/proplist.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/proplist.cpp
 CMakeFiles/warptest.dir/src/proplist.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warptest.dir/src/proplist.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/proplist.cpp.o -MF CMakeFiles/warptest.dir/src/proplist.cpp.o.d -o CMakeFiles/warptest.dir/src/proplist.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/proplist.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warptest.dir/src/proplist.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/proplist.cpp.o -MF CMakeFiles/warptest.dir/src/proplist.cpp.o.d -o CMakeFiles/warptest.dir/src/proplist.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/proplist.cpp
 
 CMakeFiles/warptest.dir/src/proplist.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/proplist.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/proplist.cpp > CMakeFiles/warptest.dir/src/proplist.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/proplist.cpp > CMakeFiles/warptest.dir/src/proplist.cpp.i
 
 CMakeFiles/warptest.dir/src/proplist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/proplist.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/proplist.cpp -o CMakeFiles/warptest.dir/src/proplist.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/proplist.cpp -o CMakeFiles/warptest.dir/src/proplist.cpp.s
 
 CMakeFiles/warptest.dir/src/common.cpp.o: CMakeFiles/warptest.dir/flags.make
-CMakeFiles/warptest.dir/src/common.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/common.cpp
+CMakeFiles/warptest.dir/src/common.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/common.cpp
 CMakeFiles/warptest.dir/src/common.cpp.o: CMakeFiles/warptest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/warptest.dir/src/common.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/common.cpp.o -MF CMakeFiles/warptest.dir/src/common.cpp.o.d -o CMakeFiles/warptest.dir/src/common.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/warptest.dir/src/common.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/warptest.dir/src/common.cpp.o -MF CMakeFiles/warptest.dir/src/common.cpp.o.d -o CMakeFiles/warptest.dir/src/common.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/common.cpp
 
 CMakeFiles/warptest.dir/src/common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/warptest.dir/src/common.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/common.cpp > CMakeFiles/warptest.dir/src/common.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/common.cpp > CMakeFiles/warptest.dir/src/common.cpp.i
 
 CMakeFiles/warptest.dir/src/common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/warptest.dir/src/common.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/src/common.cpp -o CMakeFiles/warptest.dir/src/common.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/src/common.cpp -o CMakeFiles/warptest.dir/src/common.cpp.s
 
 # Object files for target warptest
 warptest_OBJECTS = \
@@ -175,7 +175,7 @@ warptest: CMakeFiles/warptest.dir/build.make
 warptest: ext_build/tbb/libtbb_static.a
 warptest: ext_build/nanogui/libnanogui.a
 warptest: CMakeFiles/warptest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable warptest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable warptest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/warptest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -187,6 +187,6 @@ CMakeFiles/warptest.dir/clean:
 .PHONY : CMakeFiles/warptest.dir/clean
 
 CMakeFiles/warptest.dir/depend:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/warptest.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/warptest.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/warptest.dir/depend
 

@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && /usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackConfig.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && /usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && /usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackSourceConfig.cmake /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CPackSourceConfig.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && /usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackSourceConfig.cmake /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build//CMakeFiles/progress.marks
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles 0
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build//CMakeFiles/progress.marks
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/clean
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,22 +168,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/preinstall
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/preinstall
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 ext_build/CMakeFiles/pugixml.dir/rule:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/CMakeFiles/pugixml.dir/rule
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ext_build/CMakeFiles/pugixml.dir/rule
 .PHONY : ext_build/CMakeFiles/pugixml.dir/rule
 
 # Convenience name for target.
@@ -192,7 +192,7 @@ pugixml: ext_build/CMakeFiles/pugixml.dir/rule
 
 # fast build rule for target.
 pugixml/fast:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/build
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/build
 .PHONY : pugixml/fast
 
 pugixml/src/pugixml.o: pugixml/src/pugixml.cpp.o
@@ -200,7 +200,7 @@ pugixml/src/pugixml.o: pugixml/src/pugixml.cpp.o
 
 # target to build an object file
 pugixml/src/pugixml.cpp.o:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o
 .PHONY : pugixml/src/pugixml.cpp.o
 
 pugixml/src/pugixml.i: pugixml/src/pugixml.cpp.i
@@ -208,7 +208,7 @@ pugixml/src/pugixml.i: pugixml/src/pugixml.cpp.i
 
 # target to preprocess a source file
 pugixml/src/pugixml.cpp.i:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i
 .PHONY : pugixml/src/pugixml.cpp.i
 
 pugixml/src/pugixml.s: pugixml/src/pugixml.cpp.s
@@ -216,7 +216,7 @@ pugixml/src/pugixml.s: pugixml/src/pugixml.cpp.s
 
 # target to generate assembly for a file
 pugixml/src/pugixml.cpp.s:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(MAKE) $(MAKESILENT) -f ext_build/CMakeFiles/pugixml.dir/build.make ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s
 .PHONY : pugixml/src/pugixml.cpp.s
 
 # Help Target
@@ -248,6 +248,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

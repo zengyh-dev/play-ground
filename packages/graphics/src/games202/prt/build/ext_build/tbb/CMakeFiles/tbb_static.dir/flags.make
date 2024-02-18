@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DUSE_PTHREAD -D__TBB_BUILD=1 -D__TBB_DYNAMIC_LOAD_ENABLED=0 -D__TBB_SOURCE_DIRECTLY_INCLUDED=1
 
-CXX_INCLUDES = -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/include -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src/rml/include -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CXX_INCLUDES = -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/include -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src/rml/include -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb -I/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 CXX_FLAGS = -mrtm -std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -frtti -fexceptions 
 

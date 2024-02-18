@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 # Include any dependencies generated for this target.
 include ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/depend.make
@@ -74,21 +74,21 @@ glfw_OBJECTS =
 
 # External object files for target glfw
 glfw_EXTERNAL_OBJECTS = \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/context.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/init.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/input.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/monitor.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/vulkan.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/window.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_init.m.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_joystick.m.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_monitor.m.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_window.m.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_time.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/posix_thread.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/nsgl_context.m.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/egl_context.c.o" \
-"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/osmesa_context.c.o"
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/context.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/init.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/input.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/monitor.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/vulkan.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/window.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_init.m.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_joystick.m.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_monitor.m.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_window.m.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/cocoa_time.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/posix_thread.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/nsgl_context.m.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/egl_context.c.o" \
+"/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/osmesa_context.c.o"
 
 ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/context.c.o
 ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/init.c.o
@@ -107,19 +107,19 @@ ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeF
 ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw_objects.dir/osmesa_context.c.o
 ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/build.make
 ext_build/nanogui/ext/glfw/src/libglfw3.a: ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking C static library libglfw3.a"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean_target.cmake
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glfw.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking C static library libglfw3.a"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean_target.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glfw.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/build: ext_build/nanogui/ext/glfw/src/libglfw3.a
 .PHONY : ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/build
 
 ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/clean:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean.cmake
 .PHONY : ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/clean
 
 ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/depend:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/ext/glfw/src /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/ext/glfw/src /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : ext_build/nanogui/ext/glfw/src/CMakeFiles/glfw.dir/depend
 

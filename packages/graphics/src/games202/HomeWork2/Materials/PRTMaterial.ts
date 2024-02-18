@@ -1,14 +1,15 @@
 import { Material } from "./Materials";
-
 export class PRTMaterial extends Material {
     constructor(
         vertexShader: string,
         fragmentShader: string
     ) {
         super({
-            'uPrecomputeL0': { type: '', value: null },
-            'uPrecomputeL1': { type: '', value: null },
-            'uPrecomputeL2': { type: '', value: null },
-        }, ['aPrecomputeLT'], vertexShader, fragmentShader, null);
+            'uPrecomputeL[0]': { type: 'precomputeL', value: null},
+            'uPrecomputeL[1]': { type: 'precomputeL', value: null},
+            'uPrecomputeL[2]': { type: 'precomputeL', value: null},
+        }, 
+        ['aPrecomputeLT'], 
+        vertexShader, fragmentShader, null);
     }
 }

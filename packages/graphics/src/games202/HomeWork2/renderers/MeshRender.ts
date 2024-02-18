@@ -201,6 +201,23 @@ export class MeshRender {
         }
     }
 
+    bindPrecomputeLT() {
+        const gl = this.gl;
+
+        if (!this.shader.program) {
+            return;
+        }
+
+        const buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(precomputeLT[guiParams.envmapId]), gl.STATIC_DRAW);
+
+        for (let i = 0; i < 3; ++i) {
+            gl.enableVertexAttribArray(this.shader.program.attribs['aPrecomputeLT'] + i);
+            gl.vertexAttribPointer(this.shader.program.attribs['aPrecomputeLT'] + i, 3, gl.FLOAT, false, 36, i * 12);
+        }
+    }
+
     draw(camera: THREE.Camera) {
         const gl = this.gl;
 
@@ -223,14 +240,7 @@ export class MeshRender {
         gl.useProgram(this.shader.program.glShaderProgram);
 
         // Bind attribute mat3 - LT
-        const buf = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(precomputeLT[guiParams.envmapId]), gl.STATIC_DRAW);
-
-        for (var ii = 0; ii < 3; ++ii) {
-            gl.enableVertexAttribArray(this.shader.program.attribs['aPrecomputeLT'] + ii);
-            gl.vertexAttribPointer(this.shader.program.attribs['aPrecomputeLT'] + ii, 3, gl.FLOAT, false, 36, ii * 12);
-        }
+        this.bindPrecomputeLT();
 
         // Bind geometry information
         this.bindGeometryInfo();

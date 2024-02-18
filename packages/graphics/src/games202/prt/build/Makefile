@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	/usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackSourceConfig.cmake /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CPackSourceConfig.cmake
+	/usr/local/Cellar/cmake/3.28.3/bin/cpack --config ./CPackSourceConfig.cmake /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,9 +152,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

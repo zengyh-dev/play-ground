@@ -1,9 +1,9 @@
 ext_build/nanogui/CMakeFiles/nanogui.dir/src/textbox.cpp.o: \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/src/textbox.cpp \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/window.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/widget.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/object.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/common.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/src/textbox.cpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/window.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/widget.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/object.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/common.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \
@@ -365,15 +365,15 @@ ext_build/nanogui/CMakeFiles/nanogui.dir/src/textbox.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_wctrans_t.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/theme.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/vector.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/traits.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/theme.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/vector.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/math.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/screen.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/texture.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/textbox.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/screen.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/texture.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/textbox.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/ostream \
@@ -428,13 +428,13 @@ ext_build/nanogui/CMakeFiles/nanogui.dir/src/textbox.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/opengl.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/ext/glfw/include/GLFW/glfw3.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/opengl.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/ext/glfw/include/GLFW/glfw3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/os/availability.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/ext/nanovg/src/nanovg.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/ext/nanovg/src/nanovg.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/regex \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/iostream

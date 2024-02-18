@@ -6,7 +6,7 @@ import { WebglProgram } from "../Shaders/Shader";
 // import { EmissiveMaterial } from "../Lights/Light";
 import { PointLight } from "../Lights/PointLight";
 import { getMat3ValueFromRGB } from "../utils";
-import { guiParams } from "../utils/constant";
+import { guiParams, precomputeL } from "../utils/constant";
 
 interface RendererLight {
     entity: DirectionalLight | PointLight;
@@ -85,38 +85,31 @@ export class WebGLRenderer {
                 this.gl.useProgram(shaderProgram.glShaderProgram);
                 this.gl.uniform3fv(shaderProgram.uniforms.uLightPos, this.lights[l].entity.lightPos);
 
-                for (let k in this.meshes[i].material.uniforms) {
+                const colorMat3 = getMat3ValueFromRGB(precomputeL[guiParams.envmapId]);
+                for (let key in this.meshes[i].material.uniforms) {
 
-                    let cameraModelMatrix = mat4.create();
+                    const cameraModelMatrix = mat4.create();
                     //mat4.fromRotation(cameraModelMatrix, timer, [0, 1, 0]);
 
-                    let precomputeLMat3 = getMat3ValueFromRGB(this.precomputeL[guiParams.envmapId]);
-                    if (k == 'uMoveWithCamera') { // The rotation of the skybox
+                    // const precomputeLMat3 = getMat3ValueFromRGB(this.precomputeL[guiParams.envmapId]);
+                    // console.log('🔥precomputeMat3', precomputeLMat3);
+                    if (key == 'uMoveWithCamera') { // The rotation of the skybox
                         gl.uniformMatrix4fv(
-                            shaderProgram.uniforms[k],
+                            shaderProgram.uniforms[key],
                             false,
                             cameraModelMatrix);
                     }
 
-                    if (k == 'uPrecomputeL0') { // The rotation of the skybox
-                        gl.uniformMatrix3fv(
-                            shaderProgram.uniforms[k],
-                            false,
-                            precomputeLMat3[0]);
-                    }
-
-                    if (k == 'uPrecomputeL1') { // The rotation of the skybox
-                        gl.uniformMatrix3fv(
-                            shaderProgram.uniforms[k],
-                            false,
-                            precomputeLMat3[1]);
-                    }
-
-                    if (k == 'uPrecomputeL2') { // The rotation of the skybox
-                        gl.uniformMatrix3fv(
-                            shaderProgram.uniforms[k],
-                            false,
-                            precomputeLMat3[2]);
+                    // 在渲染循环中给材质设置precomputeL实时的值
+                    // Bonus - Fast Spherical Harmonic Rotation 每一帧都要重新赋值
+                    // let Mat3Value = getMat3ValueFromRGB(precomputeL[guiParams.envmapId])
+                    for (let j = 0; j < 3; j++) {
+                        if (key == `uPrecomputeL[${j}]`) {
+                            gl.uniformMatrix3fv(
+                                shaderProgram.uniforms[key],
+                                false,
+                                colorMat3[j]);
+                        }
                     }
 
                     // Bonus - Fast Spherical Harmonic Rotation

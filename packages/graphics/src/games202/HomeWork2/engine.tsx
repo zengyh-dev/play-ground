@@ -130,8 +130,8 @@ function GAMES202Main() {
         for (let i = 0; i < envMap.length; i++) {
             const curLight = envLight[envMap[i]].light;
             const curTransport = envLight[envMap[i]].trans;
-            // console.log('curLight', curLight);
-            // console.log('curTransport', curTransport);
+            console.log('curLight', curLight);
+            console.log('curTransport', curTransport);
 
             let preArray = curTransport.split(/[(\r\n)\r\n' ']+/);
             let lineArray = [];

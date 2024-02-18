@@ -119,24 +119,39 @@ PrecomputeCubemapSH(const vector<unique_ptr<float[]>>& images,
     }
 
     float sumWeight = 0;
+    // cubmap的6个面
     for (int i = 0; i < 6; i++) {
+        // 像素的位置
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 // TODO: here you need to compute light sh of each face of cubemap of each pixel
-                // 此处你需要计算每个像素下cubemap某个面的球谐系数
-                Eigen::Vector3f dir = cubemapDirs[i * width * height + y * width + x];
-                int index = (y * width + x) * channel;
-                Eigen::Array3f Le(
-                    images[i][index + 0], images[i][index + 1], images[i][index + 2]);
+                // 此处你需要计算每个像素下cubemap某个面的光照球谐系数
 
-                // 比重
-                double weight = CalcArea(x, y, width, height);
+                // 1. 获取每个像素到中心点方向
+                // 天空盒我们认为是无限大, 所以场景物体都可以认为在天空盒中心
+                int pixelDirIndex = i * width * height + y * width + x;
+                Eigen::Vector3f dir = cubemapDirs[pixelDirIndex];
 
+                // 2. 获取当前像素rbg信息作为光照值
+                int pixelImageIndex = (y * width + x) * channel;
+                Eigen::Array3f LightEnv(
+                    images[i][pixelImageIndex + 0],
+                    images[i][pixelImageIndex + 1],
+                    images[i][pixelImageIndex + 2]);
+
+                // 3. 获取cubemap上这个像素对应的立体角的权重
+                double delta_w = CalcArea(x, y, width, height);
+
+                // 4. 我们遍历所有基函数求出光照函数在基函数上的投影，并把结果累加起来即可
+                // 生成球谐系数的过程，也称为投影
+                // l代表当前阶数，m代表当前阶的第m个基函数
                 for (int l = 0; l <= SHOrder; l++) {
-                    for (int m = -l; m < l; m++) {
+                    for (int m = -l; m <= l; m++) {
                         int index = sh::GetIndex(l, m);
-                        double sh = sh::EvalSH(l, m, dir.cast<double>().normalized());
-                        SHCoeffiecents[index] += sh * weight * Le;
+                        // 4.1 求出某个基函数在某个方向上的值
+                        auto sh = sh::EvalSH(l, m, Eigen::Vector3d(dir.x(), dir.y(), dir.z()).normalized());
+                        // 4.2 积分
+                        SHCoeffiecents[index] += LightEnv * sh * delta_w;
                     }
                 }
             }
@@ -180,16 +195,21 @@ public:
         // Here only compute one mesh
         // auto 用于自动推导变量的类型。通过使用 auto，编译器可以根据变量的初始化表达式自动推断出变量的类型
         const auto mesh = scene->getMeshes()[0];
+
         // Projection environment
         auto cubePath = getFileResolver()->resolve(m_CubemapPath);
+
         auto lightPath = cubePath / "light.txt";
         auto transPath = cubePath / "transport.txt";
         ofstream lightFout(lightPath.str());
         ofstream fout(transPath.str());
+
         int width, height, channel;
+
         vector<unique_ptr<float[]>> images = ProjEnv::LoadCubemapImages(cubePath.str(), width, height, channel);
         auto envCoeffs = ProjEnv::PrecomputeCubemapSH<SHOrder>(images, width, height, channel);
         m_LightCoeffs.resize(3, SHCoeffLength);
+        // 光照球谐系数写入文件
         for (int i = 0; i < envCoeffs.size(); i++) {
             lightFout << (envCoeffs)[i].x() << " " << (envCoeffs)[i].y() << " "
                       << (envCoeffs)[i].z() << endl;
@@ -197,30 +217,42 @@ public:
         }
         cout << "Computed light sh coeffs from: " << cubePath.str()
              << " to: " << lightPath.str() << endl;
+
         // Projection transport
         m_TransportSHCoeffs.resize(SHCoeffLength, mesh->getVertexCount());
         fout << mesh->getVertexCount() << endl;
+        // 遍历所有顶点
         for (int i = 0; i < mesh->getVertexCount(); i++) {
-            const Point3f& v = mesh->getVertexPositions().col(i);
+            // 当前顶点位置
+            const Point3f& vertexPosition = mesh->getVertexPositions().col(i);
+
+            // 当前顶点法向量
             const Normal3f& n = mesh->getVertexNormals().col(i);
+
+            // 球面函数
             auto shFunc = [&](double phi, double theta) -> double {
                 Eigen::Array3d d = sh::ToVector(phi, theta);
+                // 入射单位角
                 const auto wi = Vector3f(d.x(), d.y(), d.z());
+                // 半程向量
+                double H = wi.normalized().dot(n.normalized());
                 if (m_Type == Type::Unshadowed) {
                     // TODO: here you need to calculate unshadowed transport term of a given direction
-                    // TODO: 此处你需要计算给定方向下的unshadowed传输项球谐函数值
-                    float H = n.dot(wi);
+                    // 此处你需要计算给定方向下的unshadowed传输项球谐函数值
                     return H > 0.0 ? H : 0;
                 } else {
-                    // TODO: here you need to calculate shadowed transport term of a given
-                    // direction
-                    // TODO: 此处你需要计算给定方向下的shadowed传输项球谐函数值
+                    // TODO: here you need to calculate shadowed transport term of a given direction
+                    // 此处你需要计算给定方向下的shadowed传输项球谐函数值
+                    if (H > 0.0 && !scene->rayIntersect(Ray3f(vertexPosition, wi.normalized()))) {
+                        return H;
+                    }
                     return 0;
                 }
             };
+            // 球谐阶数、需要投影在基函数上的函数、采样数
             auto shCoeff = sh::ProjectFunction(SHOrder, shFunc, m_SampleCount);
             for (int j = 0; j < shCoeff->size(); j++) {
-                m_TransportSHCoeffs.col(i).coeffRef(j) = (*shCoeff)[j];
+                m_TransportSHCoeffs.col(i).coeffRef(j) = (*shCoeff)[j] / M_PI;
             }
         }
         if (m_Type == Type::Interreflection) {
@@ -273,10 +305,10 @@ public:
         //       we use it to visualize the normals of model for debug.
         // TODO:
         // 在完成了球谐系数计算后，你需要删除下列四行，这四行代码的作用是用来可视化模型法线
-        if (c.isZero()) {
-            auto n_ = its.shFrame.n.cwiseAbs();
-            return Color3f(n_.x(), n_.y(), n_.z());
-        }
+        // if (c.isZero()) {
+        //     auto n_ = its.shFrame.n.cwiseAbs();
+        //     return Color3f(n_.x(), n_.y(), n_.z());
+        // }
         return c;
     }
 

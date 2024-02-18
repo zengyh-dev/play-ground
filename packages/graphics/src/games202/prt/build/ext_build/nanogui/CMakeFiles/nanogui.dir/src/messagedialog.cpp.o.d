@@ -1,10 +1,10 @@
 ext_build/nanogui/CMakeFiles/nanogui.dir/src/messagedialog.cpp.o: \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/src/messagedialog.cpp \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/messagedialog.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/window.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/widget.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/object.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/common.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/src/messagedialog.cpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/messagedialog.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/window.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/widget.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/object.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/common.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \
@@ -366,17 +366,17 @@ ext_build/nanogui/CMakeFiles/nanogui.dir/src/messagedialog.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/wctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_types/_wctrans_t.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/theme.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/vector.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/traits.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/theme.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/vector.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/math.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/layout.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/layout.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/is_transparent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__hash_table \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/optional \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/button.h \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/nanogui/include/nanogui/label.h
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/button.h \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/nanogui/include/nanogui/label.h

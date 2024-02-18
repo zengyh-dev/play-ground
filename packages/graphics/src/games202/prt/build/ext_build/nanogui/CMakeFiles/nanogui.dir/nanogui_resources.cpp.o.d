@@ -1,5 +1,5 @@
 ext_build/nanogui/CMakeFiles/nanogui.dir/nanogui_resources.cpp.o: \
-  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/nanogui/nanogui_resources.cpp \
+  /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/nanogui/nanogui_resources.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \

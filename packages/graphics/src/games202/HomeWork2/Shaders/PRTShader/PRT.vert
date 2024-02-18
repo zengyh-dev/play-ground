@@ -1,30 +1,33 @@
-#define SH_COEFF 9
 attribute vec3 aVertexPosition;
 attribute vec3 aNormalPosition;
-attribute vec2 aTextureCoord;
 attribute mat3 aPrecomputeLT;
-uniform mat3 uPrecomputeL0;
-uniform mat3 uPrecomputeL1;
-uniform mat3 uPrecomputeL2;
 
 uniform mat4 uModelMatrix;
 uniform mat4 uViewMatrix;
 uniform mat4 uProjectionMatrix;
-uniform float uPrecomputeL[SH_COEFF * 3];
 
-varying vec3 vColor;
+uniform mat3 uPrecomputeL[3];
 
-// 点乘系数即可得到光照结果
-float dotSH(mat3 uPrecomputeL, mat3 aPrecomputeLT) {
+varying highp vec3 vNormal;
+varying highp mat3 vPrecomputeLT;
+varying highp vec3 vColor;
+
+float L_dot_LT(mat3 PrecomputeLT, mat3 PrecomputeL) {
     float result = 0.0;
-    result += dot(uPrecomputeL[0], aPrecomputeLT[0]);
-    result += dot(uPrecomputeL[1], aPrecomputeLT[1]);
-    result += dot(uPrecomputeL[2], aPrecomputeLT[2]);
+    // 这里PrecomputeLT和PrecomputeL都是矩阵，取[0]取的是第一列
+    result += dot(PrecomputeLT[0], PrecomputeL[0]);
+    result += dot(PrecomputeLT[1], PrecomputeL[1]);
+    result += dot(PrecomputeLT[2], PrecomputeL[2]);
     return result;
 }
 
 void main(void) {
-    gl_Position = uProjectionMatrix * uViewMatrix * uModelMatrix *
-        vec4(aVertexPosition, 1.0);
-    vColor = vec3(dotSH(aPrecomputeLT, uPrecomputeL0), dotSH(aPrecomputeLT, uPrecomputeL1), dotSH(aPrecomputeLT, uPrecomputeL2));
+  // 无实际作用，避免aNormalPosition被优化后产生警告
+    vNormal = (uModelMatrix * vec4(aNormalPosition, 0.0)).xyz;
+
+    for(int i = 0; i < 3; i++) {
+        vColor[i] = L_dot_LT(aPrecomputeLT, uPrecomputeL[i]);
+    }
+
+    gl_Position = uProjectionMatrix * uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
 }

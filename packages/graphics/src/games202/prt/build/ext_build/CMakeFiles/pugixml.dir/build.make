@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 # Include any dependencies generated for this target.
 include ext_build/CMakeFiles/pugixml.dir/depend.make
@@ -70,18 +70,18 @@ include ext_build/CMakeFiles/pugixml.dir/progress.make
 include ext_build/CMakeFiles/pugixml.dir/flags.make
 
 ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o: ext_build/CMakeFiles/pugixml.dir/flags.make
-ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.cpp
+ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.cpp
 ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o: ext_build/CMakeFiles/pugixml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o -MF CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o.d -o CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o -MF CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o.d -o CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.cpp
 
 ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.cpp > CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.cpp > CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.i
 
 ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/pugixml/src/pugixml.cpp -o CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/pugixml/src/pugixml.cpp -o CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.s
 
 # Object files for target pugixml
 pugixml_OBJECTS = \
@@ -93,19 +93,19 @@ pugixml_EXTERNAL_OBJECTS =
 ext_build/libpugixml.a: ext_build/CMakeFiles/pugixml.dir/pugixml/src/pugixml.cpp.o
 ext_build/libpugixml.a: ext_build/CMakeFiles/pugixml.dir/build.make
 ext_build/libpugixml.a: ext_build/CMakeFiles/pugixml.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpugixml.a"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && $(CMAKE_COMMAND) -P CMakeFiles/pugixml.dir/cmake_clean_target.cmake
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pugixml.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpugixml.a"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && $(CMAKE_COMMAND) -P CMakeFiles/pugixml.dir/cmake_clean_target.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pugixml.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 ext_build/CMakeFiles/pugixml.dir/build: ext_build/libpugixml.a
 .PHONY : ext_build/CMakeFiles/pugixml.dir/build
 
 ext_build/CMakeFiles/pugixml.dir/clean:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build && $(CMAKE_COMMAND) -P CMakeFiles/pugixml.dir/cmake_clean.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build && $(CMAKE_COMMAND) -P CMakeFiles/pugixml.dir/cmake_clean.cmake
 .PHONY : ext_build/CMakeFiles/pugixml.dir/clean
 
 ext_build/CMakeFiles/pugixml.dir/depend:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/CMakeFiles/pugixml.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/CMakeFiles/pugixml.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : ext_build/CMakeFiles/pugixml.dir/depend
 

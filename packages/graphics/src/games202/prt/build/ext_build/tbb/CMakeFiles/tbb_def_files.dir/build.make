@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt
+CMAKE_SOURCE_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build
+CMAKE_BINARY_DIR = /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build
 
 # Utility rule file for tbb_def_files.
 
@@ -69,13 +69,13 @@ include ext_build/tbb/CMakeFiles/tbb_def_files.dir/progress.make
 ext_build/tbb/CMakeFiles/tbb_def_files: ext_build/tbb/tbb.def
 ext_build/tbb/CMakeFiles/tbb_def_files: ext_build/tbb/tbbmalloc.def
 
-ext_build/tbb/tbb.def: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src/tbb/mac64-tbb-export.def
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing tbb.def"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb && /Library/Developer/CommandLineTools/usr/bin/c++ -xc++ -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src/tbb/mac64-tbb-export.def -I /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/include -o tbb.def
+ext_build/tbb/tbb.def: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src/tbb/mac64-tbb-export.def
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Preprocessing tbb.def"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb && /Library/Developer/CommandLineTools/usr/bin/c++ -xc++ -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src/tbb/mac64-tbb-export.def -I /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/include -o tbb.def
 
-ext_build/tbb/tbbmalloc.def: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src/tbbmalloc/mac64-tbbmalloc-export.def
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Preprocessing tbbmalloc.def"
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb && /Library/Developer/CommandLineTools/usr/bin/c++ -xc++ -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/src/tbbmalloc/mac64-tbbmalloc-export.def -I /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb/include -o tbbmalloc.def
+ext_build/tbb/tbbmalloc.def: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src/tbbmalloc/mac64-tbbmalloc-export.def
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Preprocessing tbbmalloc.def"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb && /Library/Developer/CommandLineTools/usr/bin/c++ -xc++ -E /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/src/tbbmalloc/mac64-tbbmalloc-export.def -I /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb/include -o tbbmalloc.def
 
 tbb_def_files: ext_build/tbb/CMakeFiles/tbb_def_files
 tbb_def_files: ext_build/tbb/tbb.def
@@ -88,10 +88,10 @@ ext_build/tbb/CMakeFiles/tbb_def_files.dir/build: tbb_def_files
 .PHONY : ext_build/tbb/CMakeFiles/tbb_def_files.dir/build
 
 ext_build/tbb/CMakeFiles/tbb_def_files.dir/clean:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb && $(CMAKE_COMMAND) -P CMakeFiles/tbb_def_files.dir/cmake_clean.cmake
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb && $(CMAKE_COMMAND) -P CMakeFiles/tbb_def_files.dir/cmake_clean.cmake
 .PHONY : ext_build/tbb/CMakeFiles/tbb_def_files.dir/clean
 
 ext_build/tbb/CMakeFiles/tbb_def_files.dir/depend:
-	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/ext/tbb /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/ext_build/tbb/CMakeFiles/tbb_def_files.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/tbb /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/tbb/CMakeFiles/tbb_def_files.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : ext_build/tbb/CMakeFiles/tbb_def_files.dir/depend
 

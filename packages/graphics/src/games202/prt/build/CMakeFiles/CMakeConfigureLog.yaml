@@ -47,7 +47,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
       
       The C compiler identification is AppleClang, found in:
-        /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
+        /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
       
   -
     kind: "message-v1"
@@ -88,7 +88,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is AppleClang, found in:
-        /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+        /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "try_compile-v1"
@@ -99,8 +99,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -111,18 +111,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c8f1e/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c8f1e.dir/build.make CMakeFiles/cmTC_c8f1e.dir/build
-        Building C object CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o
-        /Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9fa07/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9fa07.dir/build.make CMakeFiles/cmTC_9fa07.dir/build
+        Building C object CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 13.1.6 (clang-1316.0.21.2.5)
         Target: x86_64-apple-darwin21.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.4.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
@@ -133,14 +133,14 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_c8f1e
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8f1e.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -o cmTC_c8f1e 
+        Linking C executable cmTC_9fa07
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fa07.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -o cmTC_9fa07 
         Apple clang version 13.1.6 (clang-1316.0.21.2.5)
         Target: x86_64-apple-darwin21.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_c8f1e -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_9fa07 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld  PROJECT:ld64-764
         BUILD 11:22:50 Apr 28 2022
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -179,18 +179,18 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07']
+        ignore line: [Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c8f1e/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c8f1e.dir/build.make CMakeFiles/cmTC_c8f1e.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9fa07/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9fa07.dir/build.make CMakeFiles/cmTC_9fa07.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
         ignore line: [Target: x86_64-apple-darwin21.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Ra6K07 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-r37igX -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.4.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"]
@@ -201,14 +201,14 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_c8f1e]
-        ignore line: [/usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8f1e.dir/link.txt --verbose=1]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -o cmTC_c8f1e ]
+        ignore line: [Linking C executable cmTC_9fa07]
+        ignore line: [/usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fa07.dir/link.txt --verbose=1]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -o cmTC_9fa07 ]
         ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
         ignore line: [Target: x86_64-apple-darwin21.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_c8f1e -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_9fa07 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -223,11 +223,11 @@ events:
           arg [-syslibroot] ==> ignore
           arg [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_c8f1e] ==> ignore
+          arg [cmTC_9fa07] ==> ignore
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_c8f1e.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_9fa07.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
         Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib]
@@ -251,8 +251,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -263,18 +263,18 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7ce06/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7ce06.dir/build.make CMakeFiles/cmTC_7ce06.dir/build
-        Building CXX object CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o
-        /Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_16a9c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_16a9c.dir/build.make CMakeFiles/cmTC_16a9c.dir/build
+        Building CXX object CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 13.1.6 (clang-1316.0.21.2.5)
         Target: x86_64-apple-darwin21.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdeprecated-macro -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdeprecated-macro -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.4.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
@@ -286,14 +286,14 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_7ce06
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ce06.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7ce06 
+        Linking CXX executable cmTC_16a9c
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16a9c.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_16a9c 
         Apple clang version 13.1.6 (clang-1316.0.21.2.5)
         Target: x86_64-apple-darwin21.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_7ce06 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_16a9c -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld  PROJECT:ld64-764
         BUILD 11:22:50 Apr 28 2022
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -334,18 +334,18 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea']
+        ignore line: [Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7ce06/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7ce06.dir/build.make CMakeFiles/cmTC_7ce06.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_16a9c/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_16a9c.dir/build.make CMakeFiles/cmTC_16a9c.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
         ignore line: [Target: x86_64-apple-darwin21.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdeprecated-macro -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YGfhea -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdeprecated-macro -fdebug-compilation-dir=/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-44Df7o -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.4.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"]
@@ -357,14 +357,14 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_7ce06]
-        ignore line: [/usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ce06.dir/link.txt --verbose=1]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7ce06 ]
+        ignore line: [Linking CXX executable cmTC_16a9c]
+        ignore line: [/usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16a9c.dir/link.txt --verbose=1]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_16a9c ]
         ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
         ignore line: [Target: x86_64-apple-darwin21.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_7ce06 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_16a9c -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -379,11 +379,11 @@ events:
           arg [-syslibroot] ==> ignore
           arg [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_7ce06] ==> ignore
+          arg [cmTC_16a9c] ==> ignore
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_7ce06.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_16a9c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
@@ -409,8 +409,8 @@ events:
     checks:
       - "Performing Test HAS_CPP14_FLAG"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Y7D4nm"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Y7D4nm"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-WmoiRg"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-WmoiRg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -421,15 +421,15 @@ events:
       variable: "HAS_CPP14_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Y7D4nm'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-WmoiRg'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_11cf6/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_11cf6.dir/build.make CMakeFiles/cmTC_11cf6.dir/build
-        Building CXX object CMakeFiles/cmTC_11cf6.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_CPP14_FLAG  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++14 -MD -MT CMakeFiles/cmTC_11cf6.dir/src.cxx.o -MF CMakeFiles/cmTC_11cf6.dir/src.cxx.o.d -o CMakeFiles/cmTC_11cf6.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-Y7D4nm/src.cxx
-        Linking CXX executable cmTC_11cf6
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11cf6.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_11cf6.dir/src.cxx.o -o cmTC_11cf6 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e5f8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1e5f8.dir/build.make CMakeFiles/cmTC_1e5f8.dir/build
+        Building CXX object CMakeFiles/cmTC_1e5f8.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_CPP14_FLAG  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++14 -MD -MT CMakeFiles/cmTC_1e5f8.dir/src.cxx.o -MF CMakeFiles/cmTC_1e5f8.dir/src.cxx.o.d -o CMakeFiles/cmTC_1e5f8.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-WmoiRg/src.cxx
+        Linking CXX executable cmTC_1e5f8
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e5f8.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1e5f8.dir/src.cxx.o -o cmTC_1e5f8 
         
       exitCode: 0
   -
@@ -442,8 +442,8 @@ events:
     checks:
       - "Performing Test HAS_CPP11_FLAG"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-sNTiZq"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-sNTiZq"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-cLsO76"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-cLsO76"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -454,15 +454,15 @@ events:
       variable: "HAS_CPP11_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-sNTiZq'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-cLsO76'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0df8f/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0df8f.dir/build.make CMakeFiles/cmTC_0df8f.dir/build
-        Building CXX object CMakeFiles/cmTC_0df8f.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_CPP11_FLAG  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++11 -MD -MT CMakeFiles/cmTC_0df8f.dir/src.cxx.o -MF CMakeFiles/cmTC_0df8f.dir/src.cxx.o.d -o CMakeFiles/cmTC_0df8f.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-sNTiZq/src.cxx
-        Linking CXX executable cmTC_0df8f
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0df8f.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0df8f.dir/src.cxx.o -o cmTC_0df8f 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1da8e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1da8e.dir/build.make CMakeFiles/cmTC_1da8e.dir/build
+        Building CXX object CMakeFiles/cmTC_1da8e.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_CPP11_FLAG  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++11 -MD -MT CMakeFiles/cmTC_1da8e.dir/src.cxx.o -MF CMakeFiles/cmTC_1da8e.dir/src.cxx.o.d -o CMakeFiles/cmTC_1da8e.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-cLsO76/src.cxx
+        Linking CXX executable cmTC_1da8e
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1da8e.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1da8e.dir/src.cxx.o -o cmTC_1da8e 
         
       exitCode: 0
   -
@@ -475,8 +475,8 @@ events:
     checks:
       - "Performing Test HAS_LIBCPP"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YAw6AT"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YAw6AT"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-1dIecX"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-1dIecX"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -std=c++14"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -487,15 +487,15 @@ events:
       variable: "HAS_LIBCPP"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YAw6AT'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-1dIecX'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3a6cf/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3a6cf.dir/build.make CMakeFiles/cmTC_3a6cf.dir/build
-        Building CXX object CMakeFiles/cmTC_3a6cf.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_LIBCPP  -std=c++14  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -stdlib=libc++ -MD -MT CMakeFiles/cmTC_3a6cf.dir/src.cxx.o -MF CMakeFiles/cmTC_3a6cf.dir/src.cxx.o.d -o CMakeFiles/cmTC_3a6cf.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-YAw6AT/src.cxx
-        Linking CXX executable cmTC_3a6cf
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a6cf.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3a6cf.dir/src.cxx.o -o cmTC_3a6cf 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6bc9b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6bc9b.dir/build.make CMakeFiles/cmTC_6bc9b.dir/build
+        Building CXX object CMakeFiles/cmTC_6bc9b.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAS_LIBCPP  -std=c++14  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -stdlib=libc++ -MD -MT CMakeFiles/cmTC_6bc9b.dir/src.cxx.o -MF CMakeFiles/cmTC_6bc9b.dir/src.cxx.o.d -o CMakeFiles/cmTC_6bc9b.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-1dIecX/src.cxx
+        Linking CXX executable cmTC_6bc9b
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6bc9b.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6bc9b.dir/src.cxx.o -o cmTC_6bc9b 
         
       exitCode: 0
   -
@@ -507,8 +507,8 @@ events:
     checks:
       - "Performing Test HAVE_GCC_INLINE_ASM_AVX"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-wkz4KC"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-wkz4KC"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-zZBmR2"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-zZBmR2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register"
       CMAKE_EXE_LINKER_FLAGS: " -stdlib=libc++"
@@ -519,15 +519,15 @@ events:
       variable: "HAVE_GCC_INLINE_ASM_AVX"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-wkz4KC'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-zZBmR2'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3e891/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3e891.dir/build.make CMakeFiles/cmTC_3e891.dir/build
-        Building CXX object CMakeFiles/cmTC_3e891.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_GCC_INLINE_ASM_AVX  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_3e891.dir/src.cxx.o -MF CMakeFiles/cmTC_3e891.dir/src.cxx.o.d -o CMakeFiles/cmTC_3e891.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-wkz4KC/src.cxx
-        Linking CXX executable cmTC_3e891
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e891.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_3e891.dir/src.cxx.o -o cmTC_3e891 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a9554/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a9554.dir/build.make CMakeFiles/cmTC_a9554.dir/build
+        Building CXX object CMakeFiles/cmTC_a9554.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_GCC_INLINE_ASM_AVX  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_a9554.dir/src.cxx.o -MF CMakeFiles/cmTC_a9554.dir/src.cxx.o.d -o CMakeFiles/cmTC_a9554.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-zZBmR2/src.cxx
+        Linking CXX executable cmTC_a9554
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9554.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_a9554.dir/src.cxx.o -o cmTC_a9554 
         
       exitCode: 0
   -
@@ -539,8 +539,8 @@ events:
     checks:
       - "Performing Test HAVE_SYSCONF_NPROCESSORS_ONLN"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-JShUPz"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-JShUPz"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-VEEcK8"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-VEEcK8"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register"
       CMAKE_EXE_LINKER_FLAGS: " -stdlib=libc++"
@@ -551,15 +551,15 @@ events:
       variable: "HAVE_SYSCONF_NPROCESSORS_ONLN"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-JShUPz'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-VEEcK8'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cb5f3/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cb5f3.dir/build.make CMakeFiles/cmTC_cb5f3.dir/build
-        Building CXX object CMakeFiles/cmTC_cb5f3.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_SYSCONF_NPROCESSORS_ONLN  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_cb5f3.dir/src.cxx.o -MF CMakeFiles/cmTC_cb5f3.dir/src.cxx.o.d -o CMakeFiles/cmTC_cb5f3.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-JShUPz/src.cxx
-        Linking CXX executable cmTC_cb5f3
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb5f3.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_cb5f3.dir/src.cxx.o -o cmTC_cb5f3 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9a1f2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9a1f2.dir/build.make CMakeFiles/cmTC_9a1f2.dir/build
+        Building CXX object CMakeFiles/cmTC_9a1f2.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_SYSCONF_NPROCESSORS_ONLN  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -MD -MT CMakeFiles/cmTC_9a1f2.dir/src.cxx.o -MF CMakeFiles/cmTC_9a1f2.dir/src.cxx.o.d -o CMakeFiles/cmTC_9a1f2.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-VEEcK8/src.cxx
+        Linking CXX executable cmTC_9a1f2
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a1f2.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden -Wno-switch -Wno-tautological-compare -Wno-deprecated-register  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_9a1f2.dir/src.cxx.o -o cmTC_9a1f2 
         
       exitCode: 0
   -
@@ -572,8 +572,8 @@ events:
     checks:
       - "Performing Test SUPPORTS_STDCXX11"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-ouGUqI"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-ouGUqI"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-fKTszQ"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-fKTszQ"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden"
       CMAKE_EXE_LINKER_FLAGS: " -stdlib=libc++"
@@ -584,15 +584,15 @@ events:
       variable: "SUPPORTS_STDCXX11"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-ouGUqI'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-fKTszQ'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a6a7e/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a6a7e.dir/build.make CMakeFiles/cmTC_a6a7e.dir/build
-        Building CXX object CMakeFiles/cmTC_a6a7e.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DSUPPORTS_STDCXX11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++11 -MD -MT CMakeFiles/cmTC_a6a7e.dir/src.cxx.o -MF CMakeFiles/cmTC_a6a7e.dir/src.cxx.o.d -o CMakeFiles/cmTC_a6a7e.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-ouGUqI/src.cxx
-        Linking CXX executable cmTC_a6a7e
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6a7e.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_a6a7e.dir/src.cxx.o -o cmTC_a6a7e 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_437fc/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_437fc.dir/build.make CMakeFiles/cmTC_437fc.dir/build
+        Building CXX object CMakeFiles/cmTC_437fc.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DSUPPORTS_STDCXX11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -std=c++11 -MD -MT CMakeFiles/cmTC_437fc.dir/src.cxx.o -MF CMakeFiles/cmTC_437fc.dir/src.cxx.o.d -o CMakeFiles/cmTC_437fc.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-fKTszQ/src.cxx
+        Linking CXX executable cmTC_437fc
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_437fc.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_437fc.dir/src.cxx.o -o cmTC_437fc 
         
       exitCode: 0
   -
@@ -605,8 +605,8 @@ events:
     checks:
       - "Performing Test SUPPORTS_MRTM"
     directories:
-      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-QEEUMZ"
-      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-QEEUMZ"
+      source: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-CY7Vhk"
+      binary: "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-CY7Vhk"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden"
       CMAKE_EXE_LINKER_FLAGS: " -stdlib=libc++"
@@ -617,15 +617,15 @@ events:
       variable: "SUPPORTS_MRTM"
       cached: true
       stdout: |
-        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-QEEUMZ'
+        Change Dir: '/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-CY7Vhk'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3e2b9/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3e2b9.dir/build.make CMakeFiles/cmTC_3e2b9.dir/build
-        Building CXX object CMakeFiles/cmTC_3e2b9.dir/src.cxx.o
-        /Library/Developer/CommandLineTools/usr/bin/c++ -DSUPPORTS_MRTM  -std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -mrtm -Werror -MD -MT CMakeFiles/cmTC_3e2b9.dir/src.cxx.o -MF CMakeFiles/cmTC_3e2b9.dir/src.cxx.o.d -o CMakeFiles/cmTC_3e2b9.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/HomeWork_bakup/prt/build/CMakeFiles/CMakeScratch/TryCompile-QEEUMZ/src.cxx
-        Linking CXX executable cmTC_3e2b9
-        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e2b9.dir/link.txt --verbose=1
-        /Library/Developer/CommandLineTools/usr/bin/c++ -std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_3e2b9.dir/src.cxx.o -o cmTC_3e2b9 
+        Run Build Command(s): /usr/local/Cellar/cmake/3.28.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_07496/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_07496.dir/build.make CMakeFiles/cmTC_07496.dir/build
+        Building CXX object CMakeFiles/cmTC_07496.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DSUPPORTS_MRTM  -std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -mrtm -Werror -MD -MT CMakeFiles/cmTC_07496.dir/src.cxx.o -MF CMakeFiles/cmTC_07496.dir/src.cxx.o.d -o CMakeFiles/cmTC_07496.dir/src.cxx.o -c /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/CMakeFiles/CMakeScratch/TryCompile-CY7Vhk/src.cxx
+        Linking CXX executable cmTC_07496
+        /usr/local/Cellar/cmake/3.28.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07496.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++ -std=c++11  -std=c++14 -stdlib=libc++ -D_LIBCPP_VERSION -fvisibility=hidden  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -stdlib=libc++  CMakeFiles/cmTC_07496.dir/src.cxx.o -o cmTC_07496 
         
       exitCode: 0
 ...
