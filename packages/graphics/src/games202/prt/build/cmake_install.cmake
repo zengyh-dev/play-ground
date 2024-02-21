@@ -1,8 +1,8 @@
-# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt
+# Install script for directory: E:/Learn/play-ground/packages/graphics/src/games202/prt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/nori")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,14 +32,9 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/cmake_install.cmake")
+  include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/Learn/play-ground/packages/graphics/src/games202/prt/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

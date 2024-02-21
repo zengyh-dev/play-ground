@@ -1,7 +1,7 @@
-prefix=/usr/local
+prefix=C:/Program Files/nori
 exec_prefix=${prefix}
-includedir=/usr/local/include
-libdir=/usr/local/lib
+includedir=C:/Program Files/nori/include
+libdir=C:/Program Files/nori/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input
@@ -9,5 +9,5 @@ Version: 3.3.1
 URL: https://www.glfw.org/
 Requires.private: 
 Libs: -L${libdir} -lglfw3
-Libs.private:  -framework Cocoa -framework IOKit -framework CoreFoundation -framework CoreVideo
+Libs.private:  -lgdi32
 Cflags: -I${includedir}

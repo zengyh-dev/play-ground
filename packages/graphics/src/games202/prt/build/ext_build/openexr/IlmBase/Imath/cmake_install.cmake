@@ -1,8 +1,8 @@
-# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath
+# Install script for directory: E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/nori")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,58 +32,65 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
-endif()
-
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/libImath.a")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImath.a" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImath.a")
-    execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImath.a")
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/Debug/Imath.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/Release/Imath.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/MinSizeRel/Imath.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/RelWithDebInfo/Imath.lib")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/CMakeFiles/Imath.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/CMakeFiles/Imath.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/CMakeFiles/Imath.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/CMakeFiles/Imath.dir/install-cxx-module-bmi-MinSizeRel.cmake" OPTIONAL)
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/Imath/CMakeFiles/Imath.dir/install-cxx-module-bmi-RelWithDebInfo.cmake" OPTIONAL)
+  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/OpenEXR" TYPE FILE FILES
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathBoxAlgo.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathBox.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathColorAlgo.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathColor.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathEuler.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathExc.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathExport.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathForward.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrame.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrustum.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrustumTest.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFun.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathGL.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathGLU.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathHalfLimits.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathInt64.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathInterval.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLimits.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLineAlgo.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLine.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMath.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMatrix.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathNamespace.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathPlane.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathPlatform.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathQuat.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathRandom.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathRoots.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathShear.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathSphere.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathVecAlgo.h"
-    "/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathVec.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathBoxAlgo.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathBox.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathColorAlgo.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathColor.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathEuler.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathExc.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathExport.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathForward.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrame.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrustum.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFrustumTest.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathFun.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathGL.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathGLU.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathHalfLimits.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathInt64.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathInterval.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLimits.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLineAlgo.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathLine.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMath.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathMatrix.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathNamespace.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathPlane.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathPlatform.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathQuat.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathRandom.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathRoots.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathShear.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathSphere.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathVecAlgo.h"
+    "E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr/IlmBase/Imath/ImathVec.h"
     )
 endif()
 

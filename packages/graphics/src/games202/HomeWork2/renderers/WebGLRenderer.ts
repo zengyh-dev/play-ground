@@ -1,12 +1,13 @@
 import { ReadonlyVec3, mat4 } from "gl-matrix";
 import { WebGLRenderingContextExtend } from "../../../canvas/interface";
-import { MeshRender } from './MeshRender';
+
 import { DirectionalLight } from "../Lights/DirectionalLight";
 import { WebglProgram } from "../Shaders/Shader";
 // import { EmissiveMaterial } from "../Lights/Light";
 import { PointLight } from "../Lights/PointLight";
-import { getMat3ValueFromRGB } from "../utils";
+import { getMat3ValueFromRGB, getRotationPrecomputeL } from "../utils";
 import { guiParams, precomputeL } from "../utils/constant";
+import { MeshRender } from "./MeshRenderer";
 
 interface RendererLight {
     entity: DirectionalLight | PointLight;
@@ -29,7 +30,7 @@ export class WebGLRenderer {
     shadowMeshes: MeshRender[] = [];
     gl;
     camera;
-    precomputeL: any;
+    precomputeL: number[][] = [];
 
     constructor(gl: WebGLRenderingContextExtend, camera: THREE.Camera) {
         this.gl = gl;
@@ -50,7 +51,7 @@ export class WebGLRenderer {
         this.shadowMeshes.push(mesh);
     }
 
-    addPrecomputeL(precomputeL: any) {
+    addPrecomputeL(precomputeL: number[][]) {
         this.precomputeL = precomputeL;
     }
 
@@ -65,6 +66,8 @@ export class WebGLRenderer {
 
         console.assert(this.lights.length != 0, "No light");
         console.assert(this.lights.length == 1, "Multiple lights");
+
+        const timer = Date.now() * 0.0001;
 
         for (let l = 0; l < this.lights.length; l++) {
             // Draw light
@@ -85,30 +88,26 @@ export class WebGLRenderer {
                 this.gl.useProgram(shaderProgram.glShaderProgram);
                 this.gl.uniform3fv(shaderProgram.uniforms.uLightPos, this.lights[l].entity.lightPos);
 
-                const colorMat3 = getMat3ValueFromRGB(precomputeL[guiParams.envmapId]);
-                for (let key in this.meshes[i].material.uniforms) {
-
+                // const colorMat3 = getMat3ValueFromRGB(precomputeL[guiParams.envmapId]);
+                for (const key in this.meshes[i].material.uniforms) {
                     const cameraModelMatrix = mat4.create();
-                    //mat4.fromRotation(cameraModelMatrix, timer, [0, 1, 0]);
+                    mat4.fromRotation(cameraModelMatrix, timer, [0, 1, 0]);
 
-                    // const precomputeLMat3 = getMat3ValueFromRGB(this.precomputeL[guiParams.envmapId]);
-                    // console.log('🔥precomputeMat3', precomputeLMat3);
-                    if (key == 'uMoveWithCamera') { // The rotation of the skybox
-                        gl.uniformMatrix4fv(
-                            shaderProgram.uniforms[key],
-                            false,
-                            cameraModelMatrix);
+                    if (key == "uMoveWithCamera") {
+                        // The rotation of the skybox
+                        gl.uniformMatrix4fv(shaderProgram.uniforms[key], false, cameraModelMatrix);
                     }
 
                     // 在渲染循环中给材质设置precomputeL实时的值
                     // Bonus - Fast Spherical Harmonic Rotation 每一帧都要重新赋值
-                    // let Mat3Value = getMat3ValueFromRGB(precomputeL[guiParams.envmapId])
+                    const precomputeL_RGBMat3 = getRotationPrecomputeL(
+                        precomputeL[guiParams.envmapId],
+                        cameraModelMatrix
+                    );
+                    const Mat3Value = getMat3ValueFromRGB(precomputeL_RGBMat3);
                     for (let j = 0; j < 3; j++) {
                         if (key == `uPrecomputeL[${j}]`) {
-                            gl.uniformMatrix3fv(
-                                shaderProgram.uniforms[key],
-                                false,
-                                colorMat3[j]);
+                            gl.uniformMatrix3fv(shaderProgram.uniforms[key], false, Mat3Value[j]);
                         }
                     }
 

@@ -11,7 +11,6 @@ export async function loadShaderFile(filename: string) {
     });
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function getShaderString(this: any, filename: string) {
     let val = "";
     await this.loadShaderFile(filename).then((result: string) => {

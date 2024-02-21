@@ -39,9 +39,8 @@ export const loadOBJ = (
             console.log("model " + Math.round(percentComplete) + "% downloaded");
         }
     }
-    function onError() { }
+    function onError() {}
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     new MTLLoader(manager).setPath(path).load(name + ".mtl", function (materials: any) {
         materials.preload();
         new OBJLoader(manager)
@@ -108,7 +107,7 @@ export const loadOBJ = (
                             }
 
                             if (material && shadowMaterial) {
-                                console.log('🔥add material', material);
+                                console.log("🔥add material", material);
                                 const meshRender = new MeshRender(renderer.gl, mesh, material);
                                 renderer.addMeshRender(meshRender);
 
