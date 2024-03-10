@@ -7,7 +7,9 @@ const useCanvas = (props: CanvasProps) => {
 
     useEffect(() => {
         const canvas = canvasRef.current as unknown as HTMLCanvasElement;
-        const context = canvas.getContext(options?.context || "2d") as WebGLRenderingContext;
+        // 参数为'webgl'返回: 基于 OpenGL ES 2.0 的绘图上下文
+        // 参数为'webgl2'返回: 基于 OpenGL ES 3.0 的绘图上下文
+        const context = canvas.getContext(options?.context || "webgl") as WebGLRenderingContext;
         // let frameCount = 0;
         // let animationFrameId: number;
         // const render = () => {

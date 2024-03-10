@@ -76,6 +76,7 @@ export class FBO {
         gl.bindTexture(gl.TEXTURE_2D, null);
         gl.bindRenderbuffer(gl.RENDERBUFFER, null);
 
+        // 在构造函数里直接返回了其他对象，实际上不符合JS规范
         return framebuffer;
     }
 }
