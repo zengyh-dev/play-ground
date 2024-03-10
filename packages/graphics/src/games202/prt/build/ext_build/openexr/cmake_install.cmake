@@ -1,8 +1,8 @@
-# Install script for directory: E:/Learn/play-ground/packages/graphics/src/games202/prt/ext/openexr
+# Install script for directory: /Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/ext/openexr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/nori")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,11 +32,15 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/zlib/cmake_install.cmake")
-  include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/cmake_install.cmake")
-  include("E:/Learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/OpenEXR/cmake_install.cmake")
+  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/IlmBase/cmake_install.cmake")
+  include("/Users/zengyihao/work/learn/play-ground/packages/graphics/src/games202/prt/build/ext_build/openexr/OpenEXR/cmake_install.cmake")
 
 endif()
 

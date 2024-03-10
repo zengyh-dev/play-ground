@@ -9,22 +9,35 @@
 #include <sh/spherical_harmonics.h>
 #include <stb_image.h>
 
+using namespace std;
+
 NORI_NAMESPACE_BEGIN
 
 namespace ProjEnv {
-std::vector<std::unique_ptr<float[]>>
-LoadCubemapImages(const std::string& cubemapDir, int& width, int& height,
+// vector是一个动态数组，可以在运行时根据需要动态调整大小
+vector<unique_ptr<float[]>> LoadCubemapImages(
+    const string& cubemapDir,
+    int& width,
+    int& height,
     int& channel)
 {
-    std::vector<std::string> cubemapNames { "negx.jpg", "posx.jpg", "posy.jpg",
-        "negy.jpg", "posz.jpg", "negz.jpg" };
-    std::vector<std::unique_ptr<float[]>> images(6);
+    vector<string> cubemapNames {
+        "negx.jpg",
+        "posx.jpg",
+        "posy.jpg",
+        "negy.jpg",
+        "posz.jpg",
+        "negz.jpg"
+    };
+    // unique_ptr是一个智能指针类模板，用于管理动态分配的内存资源
+    vector<unique_ptr<float[]>> images(6);
     for (int i = 0; i < 6; i++) {
-        std::string filename = cubemapDir + "/" + cubemapNames[i];
+        string filename = cubemapDir + "/" + cubemapNames[i];
         int w, h, c;
+        // float*表示一个指向float类型数据的指针
         float* image = stbi_loadf(filename.c_str(), &w, &h, &c, 3);
         if (!image) {
-            std::cout << "Failed to load image: " << filename << std::endl;
+            cout << "Failed to load image: " << filename << endl;
             exit(-1);
         }
         if (i == 0) {
@@ -32,13 +45,17 @@ LoadCubemapImages(const std::string& cubemapDir, int& width, int& height,
             height = h;
             channel = c;
         } else if (w != width || h != height || c != channel) {
-            std::cout << "Dismatch resolution for 6 images in cubemap" << std::endl;
+            // 对于后续加载的图像，检查其宽度、高度和通道数是否与第一个图像一致，如果不一致，则输出错误信息并退出程序
+            cout << "Dismatch resolution for 6 images in cubemap" << endl;
             exit(-1);
         }
-        images[i] = std::unique_ptr<float[]>(image);
+
+        // 创建了一个std::unique_ptr对象，该对象将image指针所指向的float类型数组作为其所管理的资源
+        // 这意味着，当std::unique_ptr对象被销毁时，它会自动释放所管理的内存资源，避免了手动释放内存的麻烦和内存泄漏的风险
+        images[i] = unique_ptr<float[]>(image);
         int index = (0 * 128 + 0) * channel;
-        // std::cout << images[i][index + 0] << "\t" << images[i][index + 1] << "\t"
-        //           << images[i][index + 2] << std::endl;
+        // cout << images[i][index + 0] << "\t" << images[i][index + 1] << "\t"
+        //           << images[i][index + 2] << endl;
     }
     return images;
 }
@@ -52,9 +69,13 @@ const Eigen::Vector3f cubemapFaceDirections[6][3] = {
     { { 1, 0, 0 }, { 0, -1, 0 }, { 0, 0, 1 } }, // posz
 };
 
+// 引用类型的参数允许在函数内部修改传入的参数的值，并且不会创建参数的副本
+// 通过使用引用类型的参数，可以避免在函数调用时进行大量的数据复制，提高程序的效率
 float CalcPreArea(const float& x, const float& y)
 {
-    return std::atan2(x * y, std::sqrt(x * x + y * y + 1.0));
+    // 以弧度表示的角度值
+    // 表示点(x * y, sqrt(x * x + y * y + 1.0))与原点之间的夹角
+    return atan2(x * y, sqrt(x * x + y * y + 1.0));
 }
 
 // 计算 cubemap 上每个像 素所代表的矩形区域投影到单位球面的面积
@@ -63,20 +84,24 @@ float CalcArea(const float& u_, const float& v_, const int& width,
 {
     // transform from [0..res - 1] to [- (1 - 1 / res) .. (1 - 1 / res)]
     // ( 0.5 is for texel center addressing)
+    // u和v是将输入的像素坐标转换为[-1..1]范围内的纹理坐标
     float u = (2.0 * (u_ + 0.5) / width) - 1.0;
     float v = (2.0 * (v_ + 0.5) / height) - 1.0;
 
     // shift from a demi texel, mean 1.0 / size  with u and v in [-1..1]
+    // 每个像素的纹理坐标的偏移量
     float invResolutionW = 1.0 / width;
     float invResolutionH = 1.0 / height;
 
     // u and v are the -1..1 texture coordinate on the current face.
     // get projected area for this texel
+    // 投影区域的四个顶点的纹理坐标
     float x0 = u - invResolutionW;
     float y0 = v - invResolutionH;
     float x1 = u + invResolutionW;
     float y1 = v + invResolutionH;
-    float angle = CalcPreArea(x0, y0) - CalcPreArea(x0, y1) - CalcPreArea(x1, y0) + CalcPreArea(x1, y1);
+    // 计算得到的投影区域的面积
+    float angle = CalcPreArea(x0, y0) + CalcPreArea(x1, y1) - CalcPreArea(x0, y1) - CalcPreArea(x1, y0);
 
     return angle;
 }
@@ -85,11 +110,11 @@ float CalcArea(const float& u_, const float& v_, const int& width,
 
 template <size_t SHOrder> // 球谐函数阶数
 
-std::vector<Eigen::Array3f> PrecomputeCubemapSH(const std::vector<std::unique_ptr<float[]>>& images,
+vector<Eigen::Array3f> PrecomputeCubemapSH(const vector<unique_ptr<float[]>>& images,
     const int& width, const int& height,
     const int& channel)
 {
-    std::vector<Eigen::Vector3f> cubemapDirs;
+    vector<Eigen::Vector3f> cubemapDirs;
     cubemapDirs.reserve(6 * width * height);
     for (int i = 0; i < 6; i++) {
         Eigen::Vector3f faceDirX = cubemapFaceDirections[i][0];
@@ -105,7 +130,7 @@ std::vector<Eigen::Array3f> PrecomputeCubemapSH(const std::vector<std::unique_pt
         }
     }
     constexpr int SHNum = (SHOrder + 1) * (SHOrder + 1);
-    std::vector<Eigen::Array3f> SHCoeffiecents(SHNum);
+    vector<Eigen::Array3f> SHCoeffiecents(SHNum);
     for (int i = 0; i < SHNum; i++)
         SHCoeffiecents[i] = Eigen::Array3f(0);
     float sumWeight = 0;
@@ -126,7 +151,7 @@ std::vector<Eigen::Array3f> PrecomputeCubemapSH(const std::vector<std::unique_pt
 
                 // double theta = acos(dir.z());
                 // double phi = atan2(dir.y(), dir.x());
-                // 3. 获取cubemap上这个像素对应的立体角的权重
+                // 3. 获取cubemap上这个像素对应的立体角的权重, 对于单位球体，立体角就是
                 double delta_w = CalcArea(x, y, width, height);
 
                 // 4.
@@ -176,7 +201,7 @@ public:
         }
     }
 
-    std::unique_ptr<std::vector<double>> computeInterreflectionSH(
+    unique_ptr<vector<double>> computeInterreflectionSH(
         Eigen::MatrixXf* directTSHCoeffs, // 类型对象的指针，表示直接光照的球谐系数
         const Point3f& pos, // 表示点的位置的 Point3f 类型对象
         const Normal3f& normal, // 表示点的法线的 Normal3f 类型对象
@@ -184,9 +209,9 @@ public:
         int bounces // 整数类型，表示递归的反射次数
     )
     {
-        // 创建了一个包含 SHCoeffLength 个元素的 std::vector 对象，并将其初始化为全零
-        // coeffs 是一个指向 std::unique_ptr<std::vector<double>> 类型对象的指针
-        std::unique_ptr<std::vector<double>> coeffs(new std::vector<double>());
+        // 创建了一个包含 SHCoeffLength 个元素的 vector 对象，并将其初始化为全零
+        // coeffs 是一个指向 unique_ptr<vector<double>> 类型对象的指针
+        unique_ptr<vector<double>> coeffs(new vector<double>());
         coeffs->assign(SHCoeffLength, 0.0);
 
         if (bounces > m_Bounce) {
@@ -194,9 +219,9 @@ public:
         }
         // sample_side: 样本点的边长，即 sample_count 的平方根
         const int sample_side = static_cast<int>(floor(sqrt(m_SampleCount)));
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_real_distribution<> rng(0.0, 1.0);
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_real_distribution<> rng(0.0, 1.0);
         // 函数使用嵌套的循环来对采样点进行遍历，计算球坐标系中的角度 phi 和 theta
         // 遍历方式？奇怪
         for (int t = 0; t < sample_side; t++) {
@@ -271,24 +296,24 @@ public:
 
         auto lightPath = cubePath / "light.txt";
         auto transPath = cubePath / "transport.txt";
-        std::ofstream lightFout(lightPath.str());
-        std::ofstream fout(transPath.str());
+        ofstream lightFout(lightPath.str());
+        ofstream fout(transPath.str());
 
         int width, height, channel;
 
-        std::vector<std::unique_ptr<float[]>> images = ProjEnv::LoadCubemapImages(cubePath.str(), width, height, channel);
+        vector<unique_ptr<float[]>> images = ProjEnv::LoadCubemapImages(cubePath.str(), width, height, channel);
         auto envCoeffs = ProjEnv::PrecomputeCubemapSH<SHOrder>(images, width, height, channel);
         m_LightCoeffs.resize(3, SHCoeffLength);
         // 光照球谐系数写入文件
         for (int i = 0; i < envCoeffs.size(); i++) {
-            lightFout << (envCoeffs)[i].x() << " " << (envCoeffs)[i].y() << " " << (envCoeffs)[i].z() << std::endl;
+            lightFout << (envCoeffs)[i].x() << " " << (envCoeffs)[i].y() << " " << (envCoeffs)[i].z() << endl;
             m_LightCoeffs.col(i) = (envCoeffs)[i];
         }
-        std::cout << "Computed light sh coeffs from: " << cubePath.str() << " to: " << lightPath.str() << std::endl;
+        cout << "Computed light sh coeffs from: " << cubePath.str() << " to: " << lightPath.str() << endl;
 
         // Projection transport
         m_TransportSHCoeffs.resize(SHCoeffLength, mesh->getVertexCount());
-        fout << mesh->getVertexCount() << std::endl;
+        fout << mesh->getVertexCount() << endl;
         for (int i = 0; i < mesh->getVertexCount(); i++) {
             // 当前顶点位置
             const Point3f& vertexPosition = mesh->getVertexPositions().col(i);
@@ -321,7 +346,7 @@ public:
             auto shCoeff = sh::ProjectFunction(SHOrder, shFunc, m_SampleCount);
             for (int j = 0; j < shCoeff->size(); j++) {
                 m_TransportSHCoeffs.col(i).coeffRef(j) = (*shCoeff)[j] / M_PI;
-                //m_TransportSHCoeffs.col(i).coeffRef(j) = (*shCoeff)[j];
+                // m_TransportSHCoeffs.col(i).coeffRef(j) = (*shCoeff)[j];
             }
         }
         if (m_Type == Type::Interreflection) {
@@ -333,10 +358,10 @@ public:
                 for (int j = 0; j < SHCoeffLength; j++) {
                     m_TransportSHCoeffs.col(i).coeffRef(j) += (*indirectCoeffs)[j];
                 }
-                std::cout
+                cout
                     << "computing interreflection light sh coeffs, current vertex idx: "
                     << i << " total vertex idx: " << mesh->getVertexCount()
-                    << std::endl;
+                    << endl;
             }
         }
 
@@ -347,18 +372,18 @@ public:
             for (int j = 0; j < SHCoeffLength; j++) {
                 fout << m_TransportSHCoeffs.col(idx0).coeff(j) << " ";
             }
-            fout << std::endl;
+            fout << endl;
             for (int j = 0; j < SHCoeffLength; j++) {
                 fout << m_TransportSHCoeffs.col(idx1).coeff(j) << " ";
             }
-            fout << std::endl;
+            fout << endl;
             for (int j = 0; j < SHCoeffLength; j++) {
                 fout << m_TransportSHCoeffs.col(idx2).coeff(j) << " ";
             }
-            fout << std::endl;
+            fout << endl;
         }
-        std::cout << "Computed SH coeffs"
-                  << " to: " << transPath.str() << std::endl;
+        cout << "Computed SH coeffs"
+             << " to: " << transPath.str() << endl;
     }
 
     Color3f Li(const Scene* scene, Sampler* sampler, const Ray3f& ray) const
@@ -388,7 +413,7 @@ public:
         return c;
     }
 
-    std::string toString() const
+    string toString() const
     {
         return "PRTIntegrator[]";
     }
@@ -397,7 +422,7 @@ private:
     Type m_Type;
     int m_Bounce = 1;
     int m_SampleCount = 100;
-    std::string m_CubemapPath;
+    string m_CubemapPath;
     Eigen::MatrixXf m_TransportSHCoeffs;
     Eigen::MatrixXf m_LightCoeffs;
 };
